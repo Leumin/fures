@@ -3,7 +3,7 @@ from django.conf import settings
 from django.core.exceptions import ValidationError
 
 class Categoria(models.Model):#Se agregaron validaciones
-    id_categoria = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=45,error_messages={
         'max_length':'Este campo no puede exceder los 45 caracteres',
         'null':'Este campo no puede quedar null, por favor proporcione una descripcion',
@@ -11,13 +11,9 @@ class Categoria(models.Model):#Se agregaron validaciones
     })
 
 class CategoriaRestaurante(models.Model):
-    #id_categoria_restaurante = models.ForeignKey('Categoria',on_delete=models.PROTECT,primary_key=True)
-    #id_restaurante = models.ForeignKey('Restaurantes', on_delete=models.PROTECT,primary_key=True)
     unique_together = ("Categoria","Restaurante")
 
 class Comentario(models.Model):#Se agregaron validaciones
-    #id_sucursal = models.ForeignKey('Sucursales',on_delete=models.PROTECT)
-    #id_usuario = models.ForeignKey('Usuario',on_delete=models.PROTECT)
     unique_together = ("Sucursal","Usuario")
     comentario = models.TextField(max_length=100,error_messages={
         'max_length': 'Al parecer ha sobrepasado la cantidad permitida(100 de caracteres)'
@@ -26,7 +22,7 @@ class Comentario(models.Model):#Se agregaron validaciones
 
 
 class Menu(models.Model):#Se agregaron validaciones
-    id_menu = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     nombre_menu = models.TextField(max_length=30,error_messages={
         'max_length':'Al parecer ha sobrepasado la cantidad de caracteres permitidos(30)',
         'null':' El nombre del menu no puede quedar null, por favor proporcione el nombre del menu',
@@ -37,12 +33,10 @@ class Menu(models.Model):#Se agregaron validaciones
     })
 
 class MenuSucursal(models.Model):
-    #id_menu = models.ForeignKey('Menu',on_delete=models.PROTECT,primary_key=True)#verificar esta parte con la BD
-    #id_sucursal = models.ForeignKey('Sucursales',on_delete=models.PROTECT,primary_key=True)
     unique_together = ("Menu","Sucursal")
 
 class Plato(models.Model):
-    id_plato = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     nombre_plato = models.TextField(max_length=45,error_messages={
         'max_length':'Al parecer ha sobrepasado la cantidad permitida(45) de caracteres',
         'null':'El nombre del plato no puede quedar null, por favor proporcione el nombre del plato',
@@ -63,7 +57,7 @@ class Plato(models.Model):
 
 
 class Promocion(models.Model):#Se agregaron validaciones
-    id_promocion = models.AutoField(primary_key=True,max_length=11)#verificar esta parte con la BD
+    id = models.AutoField(primary_key=True,max_length=11)#verificar esta parte con la BD
     descripcion = models.TextField(max_length=5000,error_messages={
         'max_length':'Al parecer ha sobrepasado la cantidad permitida(5000) de caracteres'
     })
@@ -78,7 +72,7 @@ class Promocion(models.Model):#Se agregaron validaciones
     sucursal = models.ForeignKey('Sucursal',on_delete=models.PROTECT)
 
 class Reserva(models.Model):#Se agregaron validaciones
-    id_reserva = models.AutoField(primary_key=True, max_length=11)
+    id = models.AutoField(primary_key=True, max_length=11)
     hora_fecha_reserva = models.DateTimeField(error_messages={
         'null':'Este campo no puede quedar null, por favor proporcione los datos que se piden',
         'blank':'Este campo no puede quedar vacío, por favor proporcione los datos que se piden'
@@ -101,7 +95,7 @@ class Reserva(models.Model):#Se agregaron validaciones
 
 
 class Restaurante(models.Model):
-    id_restaurante = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=300,error_messages={
         'max_length':'Este campo no puede contener mas de 300 caracteres',
         'null':'Este campo no puede quedar null, por favor proporcione un nombre para el restaurante',
@@ -113,7 +107,7 @@ class Restaurante(models.Model):
     estado = models.BooleanField()#verificar esta parte con la BD
 
 class Rol(models.Model):#Se agregaron validaciones
-    id_rol = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     descripcion = models.TextField(max_length=45,error_messages={
         'max_length':'Este campo no puede contener mas de 45 caracteres',
         'null':'Este campo no puede quedar null, por favor proporcione una descripcion para este rol',
@@ -121,7 +115,7 @@ class Rol(models.Model):#Se agregaron validaciones
     })
 
 class Servicio(models.Model):#Se agregaron validaciones
-    id_servicio = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     descripcion = models.TextField(max_length=45,error_messages={
         'max_length':'Este campo no puede contener mas de 45 caracteres',
 
@@ -168,7 +162,7 @@ class Sucursal(models.Model): #Se agregaron validaciones
 
 
 class TipoUsuario(models.Model): # Se agregaron validaciones
-    id_tipo_usuario = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=45,error_messages={
         'max_length':'La descripcion  de tipo de usuario no puede exceder los 45 caracteres permitidos',
         'null':'Este campo no puede quedar null, por favor complete la descripcion',
@@ -176,7 +170,7 @@ class TipoUsuario(models.Model): # Se agregaron validaciones
     })
 
 class Usuario(models.Model):    # Se agregaron validaciones
-    id_usuario = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     nombre_persona = models.CharField(max_length=45, error_messages={
                                           'max_length': 'El Nombre no puede ser mayor a 45  caracteres ',
                                           'null': 'Este campo no puede quedar null, por favor proporcione un Nombre de Usuario',
@@ -228,13 +222,11 @@ class Usuario(models.Model):    # Se agregaron validaciones
     codigo_rol = models.ForeignKey('Rol',on_delete=models.PROTECT)
 
 class UsuarioTipoUsuario(models.Model):
-    #id_usuario = models.ForeignKey('Usuario',on_delete=models.PROTECT,primary_key=True)
-    #id_tipo_usuario = models.ForeignKey('Tipo_Usuario',on_delete=models.PROTECT,primary_key=True)
     unique_together = ("Usuario","TipoUsuario")
 
 
 class CategoriaPlato(models.Model):# Se agregaron validaciones
-    id_categoria_plato=models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
     descripcion = models.CharField(max_length=100,error_messages={
         'max_length':'La descripcion  de la categoria del plato no puede contener mas de 100 caracteres',
         'null':'Este campo no puede quedar null, por favor proporcione una categoria para el plato',
