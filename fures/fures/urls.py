@@ -13,24 +13,26 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import path
 
-from fures.fures.views.categoria import ver_categorias, ver_categoria, crear_categoria, actualizar_categoria
-from fures.fures.views.categoriaPlato import ver_categoriasPlato, ver_categoriaPlato, crear_categoriaPlato, \
+
+from .views.categoria import ver_categorias, ver_categoria, crear_categoria, actualizar_categoria
+from .views.categoriaPlato import ver_categoriasPlato, ver_categoriaPlato, crear_categoriaPlato, \
     actualizar_categoriaPlato
-from fures.fures.views.comentario import ver_comentarios, ver_comentario, crear_comentario, actualizar_comentario
-from fures.fures.views.index import inicio
-from fures.fures.views.menu import ver_menus, ver_menu, crear_menu, actualizar_menu
-from fures.fures.views.plato import ver_platos, ver_plato, crear_plato, actualizar_plato
-from fures.fures.views.promocion import ver_promociones, ver_promocion, crear_promocion, actualizar_promocion
-from fures.fures.views.resereva import ver_reservas, ver_reserva, crear_reserva, actualizar_reserva
-from fures.fures.views.restaurante import ver_restaurantes, ver_restaurante, crear_restaurante, actualizar_restaurante
-from fures.fures.views.rol import ver_roles, ver_rol, crear_rol, actualizar_rol
-from fures.fures.views.servicio import ver_servicios, ver_servicio, crear_servicio, actualizar_servicio
-from fures.fures.views.sucursal import ver_sucursales, ver_sucursal, crear_sucursal, actualizar_sucursal
-from fures.fures.views.tipoUsuario import ver_tiposUsuario, ver_tipoUsuario, crear_tipoUsuario, actualizar_tipoUsuario
-from fures.fures.views.usuario import ver_usuarios, ver_usuario, crear_usuario, actualizar_usuario
+from .views.comentario import ver_comentarios, ver_comentario, crear_comentario, actualizar_comentario
+from .views.index import inicio
+from .views.menu import ver_menus, ver_menu, crear_menu, actualizar_menu
+from .views.plato import ver_platos, ver_plato, crear_plato, actualizar_plato
+from .views.promocion import ver_promociones, ver_promocion, crear_promocion, actualizar_promocion
+from .views.resereva import ver_reservas, ver_reserva, crear_reserva, actualizar_reserva
+from .views.restaurante import ver_restaurantes, ver_restaurante, crear_restaurante, actualizar_restaurante
+from .views.rol import ver_roles, ver_rol, crear_rol, actualizar_rol
+from .views.servicio import ver_servicios, ver_servicio, crear_servicio, actualizar_servicio
+from .views.sucursal import ver_sucursales, ver_sucursal, crear_sucursal, actualizar_sucursal
+from .views.tipoUsuario import ver_tiposUsuario, ver_tipoUsuario, crear_tipoUsuario, actualizar_tipoUsuario
+from .views.usuario import ver_usuarios, ver_usuario, crear_usuario, actualizar_usuario
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -101,7 +103,6 @@ urlpatterns = [
     path('comentario/crear', crear_comentario),
     path('comentario/actualizar/<int:id>', actualizar_comentario),
 
-    path('admin/', admin.site.urls),
 
 
 ]
