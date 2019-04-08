@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'fures',
         'USER': 'root',
-        'PASSWORD': '1234',
+        'PASSWORD': 'K17OACX',
         'HOST': '127.0.0.1'
     }
 }
@@ -121,4 +121,4 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/templates/'
