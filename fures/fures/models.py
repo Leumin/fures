@@ -247,3 +247,5 @@ class CategoriaPlato(models.Model):# Se agregaron validaciones
 
 class CategoriaPlatoPlato(models.Model):
     unique_together = ("CategoriaPlato","Plato")
+
+
