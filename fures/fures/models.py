@@ -1,6 +1,9 @@
+from django.contrib.auth.base_user import AbstractBaseUser
 from django.db import models
-from django.conf import settings
 from django.core.exceptions import ValidationError
+from django.db.models import signals
+from django.contrib.auth.models import User
+from django.core.mail import send_mail
 
 class Categoria(models.Model):#Se agregaron validaciones
     id = models.AutoField(primary_key=True)
@@ -105,6 +108,8 @@ class Restaurante(models.Model):
         'max_length':'Este campo no puede contener mas de 1000 caracteres'
     })#verificar esta parte con la BD
     estado = models.BooleanField()#verificar esta parte con la BD
+    def __str__(self):
+        return self.nombre
 
 class Rol(models.Model):#Se agregaron validaciones
     id = models.AutoField(primary_key=True)
@@ -153,23 +158,26 @@ class Sucursal(models.Model): #Se agregaron validaciones
         'blank':'Este campo no puede quedar vacío, por favor ingrese una cantidad para la capacidad'
     })
 
-    def clean(self):
-        if not self.capacidad.isnumeric():
-            raise ValidationError("La capacidad debe contener solo datos numericos")
+    # def clean(self):
+    #     if not self.capacidad.isnumeric():
+    #         raise ValidationError("La capacidad debe contener solo datos numericos")
 
     estado = models.BooleanField(default=True)
     restaurante = models.ForeignKey('Restaurante',on_delete=models.PROTECT)
 
+    def __int__(self):
+        return self.restaurante
 
-class TipoUsuario(models.Model): # Se agregaron validaciones
-    id = models.AutoField(primary_key=True)
-    descripcion = models.CharField(max_length=45,error_messages={
-        'max_length':'La descripcion  de tipo de usuario no puede exceder los 45 caracteres permitidos',
-        'null':'Este campo no puede quedar null, por favor complete la descripcion',
-        'blank':'Este campo no puede quedar vacío, por favor complete la descripcion'
-    })
 
-class Usuario(models.Model):    # Se agregaron validaciones
+# class TipoUsuario(models.Model): # Se agregaron validaciones
+#     id = models.AutoField(primary_key=True)
+#     descripcion = models.CharField(max_length=45,error_messages={
+#         'max_length':'La descripcion  de tipo de usuario no puede exceder los 45 caracteres permitidos',
+#         'null':'Este campo no puede quedar null, por favor complete la descripcion',
+#         'blank':'Este campo no puede quedar vacío, por favor complete la descripcion'
+#     })
+
+class Usuario(AbstractBaseUser):    # Se agregaron validaciones
     id = models.AutoField(primary_key=True)
     nombre_persona = models.CharField(max_length=45, error_messages={
                                           'max_length': 'El Nombre no puede ser mayor a 45  caracteres ',
@@ -219,10 +227,13 @@ class Usuario(models.Model):    # Se agregaron validaciones
             raise ValidationError("El numero de telefono debe contener solo datos numericos")
 
     estado = models.BooleanField(default=True)
-    codigo_rol = models.ForeignKey('Rol',on_delete=models.PROTECT)
 
-class UsuarioTipoUsuario(models.Model):
-    unique_together = ("Usuario","TipoUsuario")
+    USERNAME_FIELD = 'id'
+
+    # codigo_rol = models.ForeignKey('Rol',on_delete=models.PROTECT)
+
+# class UsuarioTipoUsuario(models.Model):
+#     unique_together = ("Usuario","TipoUsuario")
 
 
 class CategoriaPlato(models.Model):# Se agregaron validaciones
