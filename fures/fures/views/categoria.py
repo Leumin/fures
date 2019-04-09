@@ -10,8 +10,8 @@ def ver_categorias(request):
                                      Categoria.objects.filter(
                                          nombre__icontains=request.GET['descripcion']))
     else:
-        cats = serializers.serialize("json", Categoria.objects.all())
-    res = HttpResponse(cats, content_type="application/json")
+        cats = serializers.serialize("json", Categoria.objects.all()) ## si no queremos que muestre todos los campos escribimos fields=["nombre del campo", "nombre del campo"]
+    res = HttpResponse(cats, content_type="application/json", )
     res['Access-Control-Allow-Origin'] = '*'
     return res
 

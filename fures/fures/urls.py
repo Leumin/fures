@@ -33,13 +33,13 @@ from .views.servicio import ver_servicios, ver_servicio, crear_servicio, actuali
 from .views.sucursal import ver_sucursales, ver_sucursal, crear_sucursal, actualizar_sucursal
 from .views.tipoUsuario import ver_tiposUsuario, ver_tipoUsuario, crear_tipoUsuario, actualizar_tipoUsuario
 from .views.usuario import ver_usuarios, ver_usuario, crear_usuario, actualizar_usuario
-
+from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', inicio),
     #CATEGORIAS
     path('categorias/', ver_categorias),
-    path('categorias/ver/<int:id>/', ver_categoria),
+    path('categorias/ver/<int:id>/', ver_categoria, views.categoria),
     path('categorias/crear', crear_categoria),
     path('categorias/actualizar/<int:id>', actualizar_categoria),
     #RESTAURANTE
