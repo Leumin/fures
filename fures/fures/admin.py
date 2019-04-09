@@ -1,6 +1,7 @@
 
 from .models import Restaurante
 from .models import Sucursal
+from .models import ImangenSucursal
 
 from django.contrib import admin
 
@@ -40,3 +41,4 @@ class sucursal(admin.ModelAdmin):
 
 admin.site.register(Restaurante, restaurante)
 admin.site.register(Sucursal, sucursal)
+admin.site.register(ImangenSucursal)

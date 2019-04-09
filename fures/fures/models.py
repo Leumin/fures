@@ -168,7 +168,10 @@ class Sucursal(models.Model): #Se agregaron validaciones
     def __int__(self):
         return self.restaurante
 
-
+class ImangenSucursal(models.Model):
+    id = models.AutoField(primary_key=True)
+    imagen = models.ImageField(upload_to='fures/img', blank=True, null=True)
+    sucursal = models.ForeignKey('Sucursal', on_delete=models.PROTECT)
 # class TipoUsuario(models.Model): # Se agregaron validaciones
 #     id = models.AutoField(primary_key=True)
 #     descripcion = models.CharField(max_length=45,error_messages={
