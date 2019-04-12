@@ -13,15 +13,17 @@ axios.get("/restaurante/")
                         <img class="img-fluid" src="http://localhost:8000/templates/imagenes/${res.data[i].fields.imagen}" alt="imagen">
                     </a>
                     <div class="portfolio-caption">
-         
+
                         <h4>${res.data[i].fields.nombre}</h4>
-                        <p class="text-muted">Illustration</p>
+
                     </div>
                 </div>
         `
 
         }
 
-        var elemento = document.getElementById('restaurantes_recientes')
+        var elemento = document.getElementById('restaurantes_recientes');
         elemento.innerHTML=html;
     });
+
+
