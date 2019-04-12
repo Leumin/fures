@@ -175,6 +175,7 @@
 
 {#/////////////scripts//////////////#}
 
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 {#///Bootstrap core Javascript///#}
 <script src="{% static 'usuario/vendor/jquery/jquery.min.js' %}"></script>
@@ -190,5 +191,10 @@
 {#///custom scripts for this template///#}
 <script src="{% static 'usuario/js/agency.min.js' %}"></script>
 
+
+{% block js %}
+
+{% endblock %}
 </body>
+
 </html>
