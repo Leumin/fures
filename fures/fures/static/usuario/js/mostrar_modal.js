@@ -1,4 +1,4 @@
-axios.get("/restaurante/?nombre=Pizza/")
+axios.get("/restaurante/")
     .then(function (res) {
         let modal = "";
         for (var i = 0; i < res.data.length; i++) {
