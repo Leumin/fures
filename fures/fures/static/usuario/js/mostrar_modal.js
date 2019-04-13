@@ -4,7 +4,7 @@ axios.get("/restaurante/")
         for (var i = 0; i < res.data.length; i++) {
             modal += `
        
-                <h2 class="text-uppercase">${res.data[i].fields.nombre}</h2>
+                <h2 class="text-uppercase">${res.data[i].nombre}</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                 <img class="img-fluid d-block mx-auto"
                                      src="{% static 'usuario/img/portfolio/01-full.jpg' %}" alt="">
