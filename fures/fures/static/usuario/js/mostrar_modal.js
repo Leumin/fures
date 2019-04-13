@@ -1,17 +1,21 @@
-axios.get("/restaurante/")
-    .then(function (res) {
-        let modal = "";
-        for (var i = 0; i < res.data.length; i++) {
-            modal += `
+// $('#restaurante').on(function (event) {
+//     var rest = data('nombre');
+//     console.log(rest)
+// });
+
+function dataUser(p1) {
+
+    axios.get("/restaurante/?nombre="+p1)
+        .then(function (res) {
+            let modal = "";
+            for (var i = 0; i < res.data.length; i++) {
+                modal += `
        
-                <h2 class="text-uppercase">${res.data[i].nombre}</h2>
+                <h2 class="text-uppercase">${res.data[i].fields.nombre}</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                 <img class="img-fluid d-block mx-auto"
                                      src="{% static 'usuario/img/portfolio/01-full.jpg' %}" alt="">
-                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt
-                                    repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae,
-                                    nostrum, reiciendis facere nemo!</p>
+                                <p>${res.data[i].fields.descripcion}</p>
                                 <ul class="list-inline">
                                     <li>Date: January 2017</li>
                                     <li>Client: Threads</li>
@@ -23,10 +27,10 @@ axios.get("/restaurante/")
                                 </button>
         `
 
-        }
+            }
 
-        var elemento = document.getElementById('mostrar_modal');
-        elemento.innerHTML=modal;
-    });
-
+            var elemento = document.getElementById('mostrar_modal');
+            elemento.innerHTML = modal;
+        });
+}
 
