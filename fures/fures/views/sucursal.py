@@ -16,18 +16,10 @@ def ver_sucursales(request):
     return res
 
 
-def ver_sucursal(req, id):
-    sucursal = Sucursal.objects.filter(id=id).first()
-    return JsonResponse({
-        'id': sucursal.id,
-        'direccion': sucursal.direccion,
-        'telefono': sucursal.telefono,
-        'hora_inicio': sucursal.hora_inicio,
-        'hora_cierre': sucursal.hora_cierre,
-        'capacidad': sucursal.capacidad,
-        'estado': sucursal.estado,
-        'restaurante': sucursal.restaurante
-    })
+def ver_sucursal(req):
+    sucursal = serializers.serialize("json",Sucursal.objects.filter(restaurante__id=1))
+    res = HttpResponse(sucursal, content_type="application/json")
+    return  res
 
 
 def crear_sucursal(req):
