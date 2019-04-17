@@ -11,8 +11,6 @@ def restauranteshtml(request):
     return render(request, 'usuario/restaurantes.html')
 
 
-def restauranteshtml(request):
-    return render(request, 'usuario/restaurantes.html')
 
 
 
