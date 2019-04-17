@@ -8,7 +8,7 @@ from django.shortcuts import render
 from django.core.exceptions import ValidationError
 
 def restauranteshtml(request):
-    return render(request, 'usuario/restaurantes.html')
+    return render(request, 'usuario/mostrar.html')
 
 
 

@@ -17,7 +17,7 @@ def ver_sucursales(request):
 
 
 def ver_sucursal(req):
-    sucursal = serializers.serialize("json",Sucursal.objects.filter(restaurante__id=1))
+    sucursal = serializers.serialize("json",Sucursal.objects.filter(restaurante__id=3))
     res = HttpResponse(sucursal, content_type="application/json")
     return  res
 

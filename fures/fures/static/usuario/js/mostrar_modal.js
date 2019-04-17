@@ -4,14 +4,14 @@ function dataUser(id) {
             let modal = "";
             modal += `
                 <h2 class="text-uppercase">${Object.values(res.data)[1]}</h2>
-                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+<!--                                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>-->
                                 <img class="img-fluid d-block mx-auto"
                                      src="http://localhost:8000/media/${Object.values(res.data)[3]}" alt="">
                                     
                                 <p>${Object.values(res.data)[2]}</p>
                                 <ul class="list-inline">
-                                    <li>Date: January 2017</li>
-                                    <li>Client: Threads</li>
+<!--                                    <li>Date: January 2017</li>-->
+<!--                                    <li>Client: Threads</li>-->
                                     <li>Category: Illustration</li>
                                 </ul>
                                 <button class="btn btn-primary" data-dismiss="modal" type="button">
