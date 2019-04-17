@@ -1,4 +1,4 @@
-axios.get("/restaurante/")
+axios.get("/restaurante/ultimos")
     .then(function (res) {
         let html = "";
         for (var i = 0; i < res.data.length; i++) {

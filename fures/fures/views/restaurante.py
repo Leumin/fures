@@ -11,6 +11,12 @@ def restauranteshtml(request):
     return render(request, 'usuario/restaurantes.html')
 
 
+def ultimos_restaurantes(request):
+    restaurante = serializers.serialize("json", Restaurante.objects.all().order_by('-id')[:6])
+    res = HttpResponse(restaurante, content_type="application/json")
+    res['Access-Control-Allow-Origin'] = '*'
+    return res
+
 
 
 
