@@ -3,8 +3,12 @@ from django.core import serializers
 from django.shortcuts import render
 
 from ..models import *
+from django.shortcuts import render
 
 from django.core.exceptions import ValidationError
+
+def restauranteshtml(request):
+    return render(request, 'usuario/restaurantes.html')
 
 
 def restauranteshtml(request):
