@@ -11,6 +11,7 @@ def restauranteshtml(request):
     return render(request, 'usuario/restaurantes.html')
 
 
+
 def ultimos_restaurantes(request):
     restaurante = serializers.serialize("json", Restaurante.objects.all().order_by('-id')[:6])
     res = HttpResponse(restaurante, content_type="application/json")
@@ -40,6 +41,7 @@ def ver_restaurante(req, id):
         'descripcion': restaurante.descripcion,
         'imagen': str(restaurante.imagen),
         'estado': restaurante.estado
+
     })
 
 
