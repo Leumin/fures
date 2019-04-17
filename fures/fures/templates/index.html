@@ -84,17 +84,17 @@
             <div class="row" id="restaurantes_recientes">
                 {#          {% for rest in res %}#}
                 <div class="col-md-4 col-sm-6 portfolio-item">
-                    <a class="portfolio-link" data-toggle="modal" data-target="#portfolioModal1" >
+                    <a class="portfolio-link" data-toggle="modal" data-target="#portfolioModal1">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fas fa-plus fa-3x"></i>
                             </div>
                         </div>
-{#                        <img class="img-fluid" src="{% static 'usuario/img/restaurantes/rest3.jpg' %}" alt="">#}
+                        {#                        <img class="img-fluid" src="{% static 'usuario/img/restaurantes/rest3.jpg' %}" alt="">#}
                     </a>
                     <div class="portfolio-caption">
                         {#            <h4>{{ rest.nombre }}</h4>#}
-{#                        <h4>Nombre</h4>#}
+                        {#                        <h4>Nombre</h4>#}
 
                     </div>
                 </div>
@@ -102,13 +102,10 @@
                 {#          {% endfor %}#}
 
 
-
-
             </div>
 
         </div>
     </section>
-
 
     <!-- Modal 1 -->
     <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
@@ -120,7 +117,7 @@
                     </div>
                 </div>
                 <div class="container">
-                    <div class="row" >
+                    <div class="row">
                         <div class="col-lg-8 mx-auto">
                             <div class="modal-body" id="mostrar_modal">
                                 <!-- Project Details Go Here -->
@@ -148,9 +145,6 @@
             </div>
         </div>
     </div>
-
-
-
 
 {% endblock %}
 

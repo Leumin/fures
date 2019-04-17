@@ -1,11 +1,5 @@
-// $('#restaurante').on(function (event) {
-//     var rest = data('nombre');
-//     console.log(rest)
-// });
-
-function dataUser(p1) {
-
-    axios.get("/restaurante/?nombre="+p1)
+function dataUser(nombre) {
+    axios.get("/restaurante/?nombre="+nombre)
         .then(function (res) {
             let modal = "";
             for (var i = 0; i < res.data.length; i++) {

@@ -10,7 +10,7 @@ axios.get("/restaurante/")
                                 <i class="fas fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img class="img-fluid" src="http://localhost:8000/templates/imagenes/${res.data[i].fields.imagen}" alt="imagen">
+                        <img class="img-fluid" src="http://localhost:8000/media/${res.data[i].fields.imagen}" alt="imagen">
                     </a>
                     <div class="portfolio-caption">
          
@@ -18,7 +18,7 @@ axios.get("/restaurante/")
                         <p class="text-muted">Illustration</p>
                     </div>
                 </div>
-               
+         
         `
 
         }
