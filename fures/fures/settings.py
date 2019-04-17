@@ -123,4 +123,4 @@ USE_TZ = True
 
 STATIC_URL = '/templates/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'fures/meda')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'fures/media')
