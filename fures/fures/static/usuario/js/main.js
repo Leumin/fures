@@ -23,6 +23,6 @@ axios.get("/restaurante/")
 
         }
 
-        var elemento = document.getElementById('restaurantes_recientes')
+        var elemento = document.getElementById('restaurantes_recientes');
         elemento.innerHTML=html;
     });
