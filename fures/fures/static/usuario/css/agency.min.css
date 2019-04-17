@@ -7,38 +7,54 @@
 
 /*}*/
 
-.search-container input[type=text] {
-    background-color: #e60000;
-
-    height: 35px;
-
-    text-align: center;
-    color: #F5F2F2;
-    border: 0;
-    float: left;
-    align-items: flex-end;
-    border-bottom-left-radius: 50px;
-    border-top-left-radius: 165px;
+.formu{
+	padding-left: 100px;
+	top:80px;
+	left:40px;
+	width:372px;
+	border-top-left-radius: 50px #E60000;
+}
+.formu input[type="text"],
 
 
+ul.sb_dropdown{
+	border:1px;
+	background: #E60000;
+	background: -webkit-gradient(linear, left top, left bottom, from(#E60000), to(#E60000));
+	background: -moz-linear-gradient(top, #E60000, #E60000);
+	font-size:21px;
+	font: white;
+	color: white;
+	font-family: "Myriad Pro", "Trebuchet MS", sans-serif;
+	-moz-box-shadow:1px 1px 3px #555;
+	-box-shadow:1px 1px 3px #555;
+	outline:none;
+	width:200px;
+	float:left;
+	margin:11px 0px;
+	border-bottom-left-radius: 50px ;
+	border-top-left-radius: 165px ;
 }
 
-.search {
-    height: 35px;
-    float: right;
-    color: white;
-    border-top-right-radius: 50px;
-    border-bottom-right-radius: 165px;
-    background-color: #e60000;
-    padding-bottom: 0;
-    padding-left: 10px;
-    padding-right: 10px;
 
-    border-bottom: 0;
-    border-right-width: 0;
-    border-left-width: 0;
-    border-top-width: 0;
-    cursor: pointer;
+input.busqueda{
+	background:#E60000 url(../img/icons/busqueda.png) no-repeat center center;
+	border-bottom-right-radius: 165px;
+	border-top-right-radius: 50px;
+	height:33px;
+	width:50px;
+	float:left;
+	border:none;
+	margin:11px 0px;
+	border:1px;
+	-moz-box-shadow:1px 1px 3px #555;
+	-box-shadow:1px 1px 3px #555;
+	outline:none;
+	cursor:pointer;
+}
+
+.sb_input{
+	padding:  1px 5px 1px 15px;
 }
 
 
