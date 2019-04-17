@@ -27,16 +27,18 @@ def ver_restaurante(req, id):
     })
 
 
-def crear_restaurante(req):
+def crear_restaurante(request):
     errores = []
     exito = True
     try:
-        nuevo_restaurante = Restaurante()
-        nuevo_restaurante.nombre = req.POST.get('nombre', None)
-        nuevo_restaurante.descripcion = req.POST.get('descripcion', None)
-        nuevo_restaurante.estado = req.POST.get('estado', None)
-        nuevo_restaurante.full_clean()
-        nuevo_restaurante.save()
+        if request.method == 'POST':
+            nuevo_restaurante = Restaurante()
+            nuevo_restaurante.nombre = request.POST.get('nombre', None)
+            nuevo_restaurante.descripcion = request.POST.get('descripcion', None)
+            nuevo_restaurante.imagen = request.FILES['imagen']
+            nuevo_restaurante.estado = request.POST.get('estado', None)
+            nuevo_restaurante.full_clean()
+            nuevo_restaurante.save()
     except ValidationError as e:
         errores = e.messages
         exito = False

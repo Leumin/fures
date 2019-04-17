@@ -107,6 +107,7 @@ class Restaurante(models.Model):
     descripcion = models.TextField(max_length=1000,error_messages={
         'max_length':'Este campo no puede contener mas de 1000 caracteres'
     })#verificar esta parte con la BD
+    imagen = models.ImageField(upload_to='restaurantes', blank=True, null=True)
     estado = models.BooleanField()#verificar esta parte con la BD
     def __str__(self):
         return self.nombre
@@ -170,7 +171,7 @@ class Sucursal(models.Model): #Se agregaron validaciones
 
 class ImangenSucursal(models.Model):
     id = models.AutoField(primary_key=True)
-    imagen = models.ImageField(upload_to='fures/img', blank=True, null=True)
+    imagen = models.ImageField(upload_to='sucursales', blank=True, null=True)
     sucursal = models.ForeignKey('Sucursal', on_delete=models.PROTECT)
 # class TipoUsuario(models.Model): # Se agregaron validaciones
 #     id = models.AutoField(primary_key=True)
