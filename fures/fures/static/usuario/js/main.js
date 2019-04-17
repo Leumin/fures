@@ -10,7 +10,7 @@ axios.get("/restaurante/")
                                 <i class="fas fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img class="img-fluid" src="http://localhost:8000/media/${res.data[i].fields.imagen}" alt="imagen" style="height: 200px; width: 350px">
+                        <img class="img-fluid" src="http://localhost:8000/media/${res.data[i].fields.imagen}" alt="imagen">
                     </a>
                     <div class="portfolio-caption">
          
@@ -23,6 +23,6 @@ axios.get("/restaurante/")
 
         }
 
-        var elemento = document.getElementById('restaurantes_recientes');
+        var elemento = document.getElementById('restaurantes_recientes')
         elemento.innerHTML=html;
     });
