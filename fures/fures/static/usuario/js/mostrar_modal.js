@@ -9,6 +9,7 @@ function dataUser(id) {
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                 <img class="img-fluid d-block mx-auto"
                                      src="{% static 'usuario/img/portfolio/01-full.jpg' %}" alt="">
+                                    
                                 <p>${Object.values(res.data)[2]}</p>
                                 <ul class="list-inline">
                                     <li>Date: January 2017</li>
