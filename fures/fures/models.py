@@ -107,7 +107,7 @@ class Restaurante(models.Model):
     descripcion = models.TextField(max_length=1000,error_messages={
         'max_length':'Este campo no puede contener mas de 1000 caracteres'
     })#verificar esta parte con la BD
-    imagen = models.ImageField(upload_to='restaurantes', blank=True, null=True)
+    imagen = models.ImageField(upload_to='restaurantes', blank=False, null=False)
     estado = models.BooleanField()#verificar esta parte con la BD
     def __str__(self):
         return self.nombre

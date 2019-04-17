@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'fures',
         'USER': 'root',
-        'PASSWORD': '12345678',
+        'PASSWORD': '1234',
         'HOST': '127.0.0.1'
     }
 }
@@ -123,4 +123,4 @@ USE_TZ = True
 
 STATIC_URL = '/templates/'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'fures/meda')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'fures/media')

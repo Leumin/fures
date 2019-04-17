@@ -28,7 +28,8 @@ from .views.menu import ver_menus, ver_menu, crear_menu, actualizar_menu
 from .views.plato import ver_platos, ver_plato, crear_plato, actualizar_plato
 from .views.promocion import ver_promociones, ver_promocion, crear_promocion, actualizar_promocion
 from .views.resereva import ver_reservas, ver_reserva, crear_reserva, actualizar_reserva
-from .views.restaurante import ver_restaurantes, ver_restaurante, crear_restaurante, actualizar_restaurante
+from .views.restaurante import ver_restaurantes, ver_restaurante, crear_restaurante, actualizar_restaurante, \
+    restauranteshtml
 from .views.rol import ver_roles, ver_rol, crear_rol, actualizar_rol
 from .views.servicio import ver_servicios, ver_servicio, crear_servicio, actualizar_servicio
 from .views.sucursal import ver_sucursales, ver_sucursal, crear_sucursal, actualizar_sucursal
@@ -38,12 +39,14 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', inicio),
+
     #CATEGORIAS
     path('categorias/', ver_categorias),
     path('categorias/ver/<int:id>/', ver_categoria, views.categoria),
     path('categorias/crear', crear_categoria),
     path('categorias/actualizar/<int:id>', actualizar_categoria),
     #RESTAURANTE
+    path('restaurante', restauranteshtml, name='restauranteshtml'),
     path('restaurante/', ver_restaurantes),
     path('restaurante/ver/<int:id>/', ver_restaurante),
     path('restaurante/crear', crear_restaurante, name='crear_restaurante'),

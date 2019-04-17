@@ -1,8 +1,15 @@
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
+from django.shortcuts import render
+
 from ..models import *
 
 from django.core.exceptions import ValidationError
+
+
+def restauranteshtml(request):
+    return render(request, 'usuario/restaurantes.html')
+
 
 
 def ver_restaurantes(request):
