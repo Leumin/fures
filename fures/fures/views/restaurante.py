@@ -38,6 +38,7 @@ def ver_restaurante(req, id):
         'id': restaurante.id,
         'nombre': restaurante.nombre,
         'descripcion': restaurante.descripcion,
+        'imagen': str(restaurante.imagen),
         'estado': restaurante.estado
     })
 
