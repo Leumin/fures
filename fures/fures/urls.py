@@ -93,7 +93,7 @@ urlpatterns = [
     path('reserva/actualizar/<int:id>', actualizar_reserva),
     #SUCURSAL
     path('sucursal/', ver_sucursales),
-    path('sucursal/ver/<int:id>/', ver_sucursal),
+    path('sucursal/ver/', ver_sucursal),
     path('sucursal/crear', crear_sucursal),
     path('sucursal/actualizar/<int:id>', actualizar_sucursal),
     #PROMOCION

@@ -2,9 +2,7 @@ function dataUser(id) {
     axios.get("/restaurante/ver/" + id)
         .then(function (res) {
             let modal = "";
-
             modal += `
-       
                 <h2 class="text-uppercase">${Object.values(res.data)[1]}</h2>
                                 <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                                 <img class="img-fluid d-block mx-auto"
@@ -21,8 +19,6 @@ function dataUser(id) {
                                     Visitar
                                 </button>
         `
-
-
             var elemento = document.getElementById('mostrar_modal');
             elemento.innerHTML = modal;
         });
