@@ -44,7 +44,7 @@ urlpatterns = [
     path('categorias/crear', crear_categoria),
     path('categorias/actualizar/<int:id>', actualizar_categoria),
     #RESTAURANTE
-    path('restaurante/',restauranteshtml,name='restauranteshtml'),
+    path('restaurante',restauranteshtml,name='restauranteshtml'),
     path('restaurante/', ver_restaurantes),
     path('restaurante/ver/<int:id>/', ver_restaurante),
     path('restaurante/crear', crear_restaurante, name='crear_restaurante'),
