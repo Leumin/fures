@@ -1,8 +1,13 @@
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
+from django.shortcuts import render
+
 from ..models import *
 from django.core.exceptions import ValidationError
 
+
+def sucursaleshtml(request):
+    return render(request, 'usuario/sucursales.html')
 
 def ver_sucursales(request):
     if 'nombre' in request.GET:
@@ -16,8 +21,8 @@ def ver_sucursales(request):
     return res
 
 
-def ver_sucursal(req):
-    sucursal = serializers.serialize("json",Sucursal.objects.filter(restaurante__id=3))
+def ver_sucursal(req, id):
+    sucursal = serializers.serialize("json",Sucursal.objects.filter(restaurante__id=id))
     res = HttpResponse(sucursal, content_type="application/json")
     return  res
 

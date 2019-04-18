@@ -32,13 +32,13 @@ from .views.restaurante import restauranteshtml, ver_restaurantes, ver_restauran
     actualizar_restaurante, ultimos_restaurantes
 from .views.rol import ver_roles, ver_rol, crear_rol, actualizar_rol
 from .views.servicio import ver_servicios, ver_servicio, crear_servicio, actualizar_servicio
-from .views.sucursal import ver_sucursales, ver_sucursal, crear_sucursal, actualizar_sucursal
+from .views.sucursal import ver_sucursales, ver_sucursal, crear_sucursal, actualizar_sucursal, sucursaleshtml
 from .views.tipoUsuario import ver_tiposUsuario, ver_tipoUsuario, crear_tipoUsuario, actualizar_tipoUsuario
 from .views.usuario import ver_usuarios, ver_usuario, crear_usuario, actualizar_usuario
 from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', inicio),
+    path('', inicio, name='inicio'),
     #CATEGORIAS
     path('categorias/', ver_categorias),
     path('categorias/ver/<int:id>/', ver_categoria, views.categoria),
@@ -92,8 +92,9 @@ urlpatterns = [
     path('reserva/crear', crear_reserva),
     path('reserva/actualizar/<int:id>', actualizar_reserva),
     #SUCURSAL
+    path('sucursal/', sucursaleshtml, name='sucursalhtml'),
     path('sucursal/', ver_sucursales),
-    path('sucursal/ver/', ver_sucursal),
+    path('sucursal/ver/<int:id>/', ver_sucursal),
     path('sucursal/crear', crear_sucursal),
     path('sucursal/actualizar/<int:id>', actualizar_sucursal),
     #PROMOCION

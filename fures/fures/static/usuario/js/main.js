@@ -24,5 +24,5 @@ axios.get("/restaurante/ultimos")
         }
 
         var elemento = document.getElementById('restaurantes_recientes')
-        elemento.innerHTML=html;
+        elemento.innerHTML = html;
     });
