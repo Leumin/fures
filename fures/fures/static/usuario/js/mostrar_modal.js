@@ -15,10 +15,7 @@ function dataUser(id) {
 <!--                                    <li>Client: Threads</li>-->
                                     <li>Category: Illustration</li>
                                 </ul>
-                                <a data-target="#portfolioModal2" class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <!--<i class="fas fa-times"></i>-->
-                                    Visitar
-                                </a>
+                                
                                 <h4 class="section-heading text-uppercase">Sucursales</h4>
                         `;
             for (var i = 0; i < suc.data.length; i++) {
@@ -39,6 +36,10 @@ function dataUser(id) {
                                         <p class="text-muted">${suc.data[i].fields.direccion}</p>
                                     </div>
                                 </div>
+                                <a data-target="#portfolioModal2" class="btn btn-primary" data-dismiss="modal" type="button">
+                                    <!--<i class="fas fa-times"></i>-->
+                                    Visitar
+                                </a>
                           </div>
                  `
             }
