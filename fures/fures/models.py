@@ -146,14 +146,7 @@ class Sucursal(models.Model): #Se agregaron validaciones
         if not self.telefono.isnumeric():
             raise ValidationError("El numero de telefono debe contener solo datos numericos")
 
-    hora_inicio = models.TimeField(error_messages={
-        'null':'Este campo no puede quedar null, por favor proporcione una hora de inicio',
-        'blank':'Este campo no puede quedar vacío, por favor proporcione una hora de inicio'
-    })
-    hora_cierre = models.TimeField(error_messages={
-        'null':'Este campo no puede quedar null, por favor proporcione una hora de cierre',
-        'blank':'Este campo no puede quedar vacío, por favor proporcione una hora de cierre'
-    })
+
     capacidad = models.IntegerField(error_messages={
         'null':'Es necesario ingresar una cantidad para la capacidad',
         'blank':'Este campo no puede quedar vacío, por favor ingrese una cantidad para la capacidad'
@@ -168,6 +161,26 @@ class Sucursal(models.Model): #Se agregaron validaciones
 
     def __int__(self):
         return self.restaurante
+
+
+
+class Horario(models.Model):
+    id = models.AutoField(primary_key=True)
+    dia = models.CharField(max_length=15, error_messages={
+        'max_length': 'Ha excedido la cantidad permitida(15) de caracteres',
+        'null': ' Este campo no puede quedar null',
+        'blank': ' Este campo no puede quedar vacío'
+    })
+    hora_inicio = models.TimeField(error_messages={
+        'null': 'Este campo no puede quedar null, por favor proporcione una hora de inicio',
+        'blank': 'Este campo no puede quedar vacío, por favor proporcione una hora de inicio'
+    })
+    hora_cierre = models.TimeField(error_messages={
+        'null': 'Este campo no puede quedar null, por favor proporcione una hora de cierre',
+        'blank': 'Este campo no puede quedar vacío, por favor proporcione una hora de cierre'
+    })
+    sucursal = models.ForeignKey('Sucursal', on_delete=models.PROTECT)
+
 
 class ImangenSucursal(models.Model):
     id = models.AutoField(primary_key=True)
