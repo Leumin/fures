@@ -27,10 +27,8 @@ function dataUser(id) {
 
 
 
- <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                            <div class="modal-body" id="mostrar_modal">  
+ 
+                             <div class="col-lg-8 mx-auto">
                             <div class="card">
   
   <div class="card-body">
@@ -40,10 +38,9 @@ function dataUser(id) {
     <a href="#" class="btn btn-primary">Visitar</a>
   </div>
 </div>
-                            </div>
-                        </div>    
-                    </div>        
- </div>   
+                       </div>
+                            
+   
                  `
             }
             var elemento = document.getElementById('mostrar_modal');

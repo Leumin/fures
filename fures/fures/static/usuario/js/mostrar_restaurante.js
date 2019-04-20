@@ -1,16 +1,9 @@
-{% extends 'base.html' %}
-{% load static %}
-
-{% block titulo %}
-
-
-{% endblock %}
-
-
-{% block contenido %}
-    <link rel="stylesheet" href="{% static 'usuario/css/sliderestaurante.css' %}">
-
-<div id="restauranteinfo">
+axios.get(" ")
+    .then(function (res) {
+        let html = "";
+        for (var i = 0; i < res.data.length; i++) {
+            html += `
+         
     <div class="padre">
         <div class="hijo">
             <h2 style="text-align:center">Nombre del Restaurante</h2>
@@ -19,68 +12,30 @@
 
             <!-- Full-width images with number text -->
             <div class="mySlides">
-{#                <div class="numbertext">1 / 6</div>#}
+                
                 <img src="{% static 'usuario/img/slideshows/img_woods_wide.jpg' %}" style="width:100%">
             </div>
 
-{#            <div class="mySlides">#}
-{#                <div class="numbertext">2 / 6</div>#}
-{#                <img src="{% static 'usuario/img/slideshows/img_5terre_wide.jpg' %}" style="width:100%">#}
-{#            </div>#}
-{##}
-{#            <div class="mySlides">#}
-{#                <div class="numbertext">3 / 6</div>#}
-{#                <img src="{% static 'usuario/img/slideshows/img_mountains_wide.jpg' %}" style="width:100%">#}
-{#            </div>#}
-{##}
-{#            <div class="mySlides">#}
-{#                <div class="numbertext">4 / 6</div>#}
-{#                <img src="{% static 'usuario/img/slideshows/img_lights_wide.jpg' %}" style="width:100%">#}
-{#            </div>#}
-{##}
-{#            <div class="mySlides">#}
-{#                <div class="numbertext">5 / 6</div>#}
-{#                <img src="{% static 'usuario/img/slideshows/img_nature_wide.jpg' %}" style="width:100%">#}
-{#            </div>#}
-{##}
-{#            <div class="mySlides">#}
-{#                <div class="numbertext">6 / 6</div>#}
-{#                <img src="{% static 'usuario/img/slideshows/img_snow_wide.jpg' %}" style="width:100%">#}
-{#            </div>#}
+          
 
             <!-- Next and previous buttons -->
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
             <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-
+        
 
             <!-- Thumbnail images -->
             <div class="row">
                 <div class="column">
-                    <img class="demo cursor" src="{% static 'usuario/img/slideshows/img_woods.jpg' %}" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+                    <img class="demo cursor" src="{% static 'usuario/img/slideshows/img_woods.jpg' %}" style="width:100%" onclick="currentSlide(1)" alt="">
                 </div>
-                <div class="column">
-                    <img class="demo cursor" src="{% static 'usuario/img/slideshows/img_5terre.jpg' %}" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-                </div>
-                <div class="column">
-                    <img class="demo cursor" src="{% static 'usuario/img/slideshows/img_mountains.jpg' %}" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-                </div>
-                <div class="column">
-                    <img class="demo cursor" src="{% static 'usuario/img/slideshows/img_lights.jpg' %}" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-                </div>
-                <div class="column">
-                    <img class="demo cursor" src="{% static 'usuario/img/slideshows/img_nature.jpg' %}" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-                </div>
-                <div class="column">
-                    <img class="demo cursor" src="{% static 'usuario/img/slideshows/img_snow.jpg' %}" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
-                </div>
+            
             </div>
         </div>
 
         </div>
 
     </div>
-
 
     <div class="container">
     <hr style="background-color: #e2e3e5">
@@ -115,31 +70,7 @@
                                                     <td>11:00am-9:00pm</td>
 
                                                 </tr>
-                                                <tr>
-                                                    <th scope="row">Martes</th>
-                                                    <td>11:00am-9:00pm</td>
-
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Miercoles</th>
-                                                    <td>11:00am-9:00pm</td>
-
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Jueves</th>
-                                                    <td>11:00am-9:00pm</td>
-
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Viernes</th>
-                                                    <td>11:00am-9:00pm</td>
-
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Sábado</th>
-                                                    <td>11:00am-9:00pm</td>
-
-                                                </tr>
+                                              
                                                 </tbody>
                                             </table>
                                         </div>
@@ -266,40 +197,7 @@
 
     </div>
 
-        <div class="col">
-            <div class="media">
-                <img src="{% static 'usuario/img/servicios/parked-car.png' %}" class="mr-3" alt="..." width="20px">
-                <div class="media-body">
-                    <h6 class="mt-0">Media heading</h6>
-                </div>
-            </div>
-
-
-
-        </div>
-        <div class="col">
-            <div class="media">
-                <img src="{% static 'usuario/img/servicios/parked-car.png' %}" class="mr-3" alt="..." width="20px">
-                <div class="media-body">
-                    <h6 class="mt-0">Media heading</h6>
-                </div>
-            </div>
-
-
-
-        </div>
-        <div class="col">
-            <div class="media">
-                <img src="{% static 'usuario/img/servicios/parked-car.png' %}" class="mr-3" alt="..." width="20px">
-                <div class="media-body">
-                    <h6 class="mt-0">Media heading</h6>
-                </div>
-            </div>
-
-
-
-        </div>
-
+       
 
     </div>
 </div>
@@ -364,97 +262,11 @@
 
 </div>
 </div>
-    <br>
-</div>
+         
+        `
 
-
-
-{#//////////////////#}
-
-    <script>
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    // Next/previous controls
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    // Thumbnail image controls
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("demo");
-        {#var captionText = document.getElementById("caption");#}
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
         }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-        {#captionText.innerHTML = dots[slideIndex-1].alt;#}
-    }
-</script>
 
-
-    {#//////////////////#}
-
-<script src="{% static 'usuario/js/stars/starrr.js' %}"></script>
-
-    <script type="text/javascript">
-    $(function () {
-        $('#datetimepicker1').datetimepicker();
+        var elemento = document.getElementById('restauranteinfo');
+        elemento.innerHTML = html;
     });
-</script>
-<script type="text/javascript">
-
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36251023-1']);
-    _gaq.push(['_setDomainName', 'jqueryscript.net']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-
-</script>
-
-
-    <!--///////////////////////star////////////////////////////////////////-->
-<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js"></script>-->
-
-<script>
-    $('#star1').starrr({
-        change: function(e, value){
-            if (value) {
-                $('.your-choice-was').show();
-                $('.choice').text(value);
-            } else {
-                $('.your-choice-was').hide();
-            }
-        }
-    });
-
-
-</script>
-<!--///////////////////////////////////////////////////////////////-->
-
-
-
-{% endblock %}
-
-{% block js %}
-    <script src="{% static 'usuario/js/date-time/datetimepicker.js' %}"></script>
-    <script src="{% static 'usuario/js/date-time/bootstrap-datetimepicker.min.js' %}"></script>
-
-{% endblock %}
