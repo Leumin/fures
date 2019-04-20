@@ -1,0 +1,86 @@
+{#{% extends 'base.html' %}#}
+{% load static %}
+
+{% block titulo %}
+
+
+{% endblock %}
+
+
+{% block contenido %}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <!-- Load an icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{% static 'usuario/css/registro.css' %}">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body style="background-image: url({% static 'usuario/img/login/Fondo.jpeg' %});  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;">
+
+<link rel="stylesheet" href="../css/registro.css">
+<div class="container h-100" style="padding: 5px 0px">
+            <div class="d-flex justify-content-center form_container" style="min-height: 250px">
+                <div class="user_card" id="car">
+                    <a href="{% url "inicio" %}"><img src="{% static 'usuario/img/login/Fures-Logos2.png' %}" class="brand_logo" alt="Logo"></a>
+                    <div class="d-flex justify-content-center">
+                <form class="formm" style="width: 100%; height: 80%">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputNombre">Nombre</label>
+                            <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputApellido">Apellido</label>
+                            <input type="text" class="form-control" id="inputApellido" placeholder="Apellido">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputDirección">Dirección</label>
+                            <input type="text" class="form-control" id="inputDirección" placeholder="Dirección">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputNombreUsuario">Nombre Usuario</label>
+                            <input type="text" class="form-control" id="inputNombreUsuario" placeholder="Nombre Usuario">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Contraseña</label>
+                            <input type="password" class="form-control" id="inputPassword4" placeholder="Contraseña">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputNumero">Telefono</label>
+                            <input type="text" class="form-control" id="inputNumero" placeholder="Telefono">
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="inputCorreo">Correo</label>
+                            <input type="email" class="form-control" id="inputCorreo" placeholder="Correo">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label class="form-check-label" for="gridCheck">
+                                Check me out
+                            </label>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary">Registrar Datos</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</div>
+</html>
+
+
+{% endblock %}
