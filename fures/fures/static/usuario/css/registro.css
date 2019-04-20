@@ -1,0 +1,35 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.user_card {
+    height: 580px;
+    width: 660px;
+    margin-top: 20px;
+    margin-bottom: auto;
+    background: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+
+}
+
+.formm{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+
+.brand_logo {
+    height: 150px;
+    width: 150px;
+    border-radius: 140%;
+    border: 0px  white;
+    margin: -6px 243px;
+    margin-top: 9px;
+}

@@ -35,7 +35,7 @@ function dataUser(id) {
     <h5 class="card-title">${suc.data[i].fields.direccion}</h5>
     <h6 class="card-title">${suc.data[i].fields.telefono}</h6>
 <!--    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
-    <a href="#" class="btn btn-primary">Visitar</a>
+    <a href="#" class="btn btn-primary" onclick="">Visitar</a>
   </div>
 </div>
                        </div>

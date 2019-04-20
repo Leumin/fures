@@ -1,5 +1,5 @@
 
-from .models import Restaurante
+from .models import Restaurante, Horario
 from .models import Sucursal
 from .models import ImangenSucursal
 
@@ -15,11 +15,16 @@ class inlineimagen(admin.StackedInline):
     extra = 3
 
 
+class inlinehorario(admin.StackedInline):
+    model = Horario
+    extra = 7
+
+
 class sucursal(admin.ModelAdmin):
-    fields = ['direccion', 'telefono', 'hora_inicio', 'hora_cierre', 'capacidad', 'estado', 'restaurante']
+    fields = ['direccion', 'telefono', 'capacidad', 'estado', 'restaurante']
     list_display = ('direccion', 'telefono', 'capacidad', 'estado')
     list_filter = ['restaurante']
-    inlines = [inlineimagen]
+    inlines = [inlineimagen, inlinehorario]
 
 
 admin.site.register(Restaurante, restaurante)
