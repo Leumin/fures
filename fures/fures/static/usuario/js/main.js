@@ -10,7 +10,7 @@ axios.get("/restaurante/ultimos")
                                 <i class="fas fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img class="img-fluid" src="http://localhost:8000/media/${res.data[i].fields.imagen}" alt="imagen">
+                        <img class="img-fluid" src="http://localhost:8000/media/${res.data[i].fields.imagen}" alt="imagen" style="width:350px; height: 200px ">
                     </a>
                     <div class="portfolio-caption">
          

@@ -18,29 +18,32 @@ function dataUser(id) {
                                 
                                 <h4 class="section-heading text-uppercase">Sucursales</h4>
                         `;
+
+
             for (var i = 0; i < suc.data.length; i++) {
                  modal += `
-                          <div>
-                            <div class="row" id="restaurantes_recientes">
-                                <div class="col-md-4 col-sm-6 portfolio-item">
-                                    <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
-                                        <div class="portfolio-hover">
-                                            <div class="portfolio-hover-content">
-                                                <i class="fas fa-plus fa-3x"></i>
-                                            </div>
-                                        </div>
-                                        <img class="img-fluid" src="" alt="">
-                                    </a>
-                                    <div class="portfolio-caption">
-                                        <h4></h4>
-                                        <p class="text-muted">${suc.data[i].fields.direccion}</p>
-                                    </div>
-                                </div>
-                                <a data-target="#portfolioModal2" class="btn btn-primary" data-dismiss="modal" type="button">
-                                    <!--<i class="fas fa-times"></i>-->
-                                    Visitar
-                                </a>
-                          </div>
+
+<!--    <h5 class="card-title">${suc.data[i].fields.direccion}</h5>-->
+
+
+
+ <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 mx-auto">
+                            <div class="modal-body" id="mostrar_modal">  
+                            <div class="card">
+  
+  <div class="card-body">
+    <h5 class="card-title">${suc.data[i].fields.direccion}</h5>
+    <h6 class="card-title">${suc.data[i].fields.telefono}</h6>
+<!--    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
+    <a href="#" class="btn btn-primary">Visitar</a>
+  </div>
+</div>
+                            </div>
+                        </div>    
+                    </div>        
+ </div>   
                  `
             }
             var elemento = document.getElementById('mostrar_modal');
