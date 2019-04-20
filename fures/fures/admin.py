@@ -18,6 +18,7 @@ class inlineimagen(admin.StackedInline):
 class inlinehorario(admin.StackedInline):
     model = Horario
     extra = 7
+    max_num = 7
 
 
 class sucursal(admin.ModelAdmin):
