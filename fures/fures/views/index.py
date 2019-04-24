@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 
 def inicio(request):
-    return render(request, 'administrador/crear_sucursal.html')
+    return render(request, 'administrador/crear_menu.html''')
 
 
 def login(request):

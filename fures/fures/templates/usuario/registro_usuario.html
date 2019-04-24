@@ -14,17 +14,16 @@
     <meta charset="UTF-8">
     <!-- Load an icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <link rel="stylesheet" href="{% static 'usuario/css/registro.css' %}">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'usuario/css/registro.css' %}">
+    <script src="{% static 'usuario/js/jquery-3.4.0.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'usuario/js/FormularioLogin.js' %}" type="text/javascript"></script>
 </head>
 
 <body style="background-image: url({% static 'usuario/img/login/Fondo.jpeg' %});  background-position: center;
     background-repeat: no-repeat;
     background-size: cover;">
 
-<link rel="stylesheet" href="../css/registro.css">
 <div class="container h-100" style="padding: 5px 0px">
             <div class="d-flex justify-content-center form_container" style="min-height: 250px">
                 <div class="user_card" id="car">
@@ -34,31 +33,31 @@
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputNombre">Nombre</label>
-                            <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
-                        </div>4
+                            <input type="text" class="form-control" id="Nombre" placeholder="Nombre" required>
+                        </div>
                         <div class="form-group col-md-6">
                             <label for="inputApellido">Apellido</label>
-                            <input type="text" class="form-control" id="inputApellido" placeholder="Apellido">
+                            <input type="text" class="form-control" id="inputApellido" placeholder="Apellido" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputDirección">Dirección</label>
-                            <input type="text" class="form-control" id="inputDirección" placeholder="Dirección">
+                            <input type="text" class="form-control" id="inputDirección" placeholder="Dirección" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputNombreUsuario">Nombre Usuario</label>
-                            <input type="text" class="form-control" id="inputNombreUsuario" placeholder="Nombre Usuario">
+                            <input type="text" class="form-control" id="inputNombreUsuario" placeholder="Nombre Usuario" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPassword4">Contraseña</label>
-                            <input type="password" class="form-control" id="inputPassword4" placeholder="Contraseña">
+                            <input type="password" class="form-control" id="inputPassword4" placeholder="Contraseña" required>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputNumero">Telefono</label>
-                            <input type="text" class="form-control" id="inputNumero" placeholder="Telefono">
+                            <input type="text" class="form-control" id="inputNumero" placeholder="Telefono" size="8" maxlength="8" minlength="8" onkeydown="return aceptNum(event)" onpaste="return false;" required>
                         </div>
                         <div class="form-group col-md-12">
                             <label for="inputCorreo">Correo</label>
-                            <input type="email" class="form-control" id="inputCorreo" placeholder="Correo">
+                            <input type="email" class="form-control" id="inputCorreo" placeholder="Correo" required>
                         </div>
                     </div>
                     <div class="d-flex justify-content-center">
