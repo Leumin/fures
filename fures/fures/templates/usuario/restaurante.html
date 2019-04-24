@@ -9,445 +9,413 @@
 
 {% block contenido %}
     <link rel="stylesheet" href="{% static 'usuario/css/sliderestaurante.css' %}">
+    <style>
 
-<div id="restauranteinfo">
-    <div class="padre">
-        <div class="hijo">
-            <h2 style="text-align:center">Nombre del Restaurante</h2>
-            <!-- Container for the image gallery -->
-            <div class="imgcontainer">
+    </style>
 
-            <!-- Full-width images with number text -->
-            <div class="mySlides">
-{#                <div class="numbertext">1 / 6</div>#}
-                <img src="{% static 'usuario/img/slideshows/img_woods_wide.jpg' %}" style="width:100%">
+    <div id="restauranteinfo">
+        <div class="padre">
+            <div class="hijo">
+                <h2 style="text-align:center">Nombre del Restaurante</h2>
+                <!-- Container for the image gallery -->
+                <div class="imgcontainer">
+
+                    <!-- Full-width images with number text -->
+                    <div class="mySlides">
+                        {#                <div class="numbertext">1 / 6</div>#}
+                        <img src="{% static 'usuario/img/slideshows/img_woods_wide.jpg' %}" style="width:100%">
+                    </div>
+
+
+                    <!-- Next and previous buttons -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+                    <!-- Thumbnail images -->
+                    <div class="row">
+                        <div class="column">
+                            <img class="demo cursor" src="{% static 'usuario/img/slideshows/img_woods.jpg' %}"
+                                 style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
 
-{#            <div class="mySlides">#}
-{#                <div class="numbertext">2 / 6</div>#}
-{#                <img src="{% static 'usuario/img/slideshows/img_5terre_wide.jpg' %}" style="width:100%">#}
-{#            </div>#}
-{##}
-{#            <div class="mySlides">#}
-{#                <div class="numbertext">3 / 6</div>#}
-{#                <img src="{% static 'usuario/img/slideshows/img_mountains_wide.jpg' %}" style="width:100%">#}
-{#            </div>#}
-{##}
-{#            <div class="mySlides">#}
-{#                <div class="numbertext">4 / 6</div>#}
-{#                <img src="{% static 'usuario/img/slideshows/img_lights_wide.jpg' %}" style="width:100%">#}
-{#            </div>#}
-{##}
-{#            <div class="mySlides">#}
-{#                <div class="numbertext">5 / 6</div>#}
-{#                <img src="{% static 'usuario/img/slideshows/img_nature_wide.jpg' %}" style="width:100%">#}
-{#            </div>#}
-{##}
-{#            <div class="mySlides">#}
-{#                <div class="numbertext">6 / 6</div>#}
-{#                <img src="{% static 'usuario/img/slideshows/img_snow_wide.jpg' %}" style="width:100%">#}
-{#            </div>#}
-
-            <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-
-
-            <!-- Thumbnail images -->
-            <div class="row">
-                <div class="column">
-                    <img class="demo cursor" src="{% static 'usuario/img/slideshows/img_woods.jpg' %}" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-                </div>
-                <div class="column">
-                    <img class="demo cursor" src="{% static 'usuario/img/slideshows/img_5terre.jpg' %}" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-                </div>
-                <div class="column">
-                    <img class="demo cursor" src="{% static 'usuario/img/slideshows/img_mountains.jpg' %}" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-                </div>
-                <div class="column">
-                    <img class="demo cursor" src="{% static 'usuario/img/slideshows/img_lights.jpg' %}" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-                </div>
-                <div class="column">
-                    <img class="demo cursor" src="{% static 'usuario/img/slideshows/img_nature.jpg' %}" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-                </div>
-                <div class="column">
-                    <img class="demo cursor" src="{% static 'usuario/img/slideshows/img_snow.jpg' %}" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
-                </div>
-            </div>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <hr style="background-color: #e2e3e5">
+            <div class="d-flex justify-content-around">
+                <div class="row">
+                    <div class="col">
+                        <div class="media">
+                            <img src="{% static 'usuario/img/servicios/parked-car.png' %}" width="20px">
+                            <div class="media-body">
 
-        </div>
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn text-warning" data-toggle="modal"
+                                        data-target="#exampleModal1">
+                                    Ver Horarios
+                                </button>
 
-    </div>
+                                <!-- Modal -->
+                                <div id="horario">
+                                    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog"
+                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel1">Horarios</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <table class="table">
 
+                                                        <tbody>
+                                                        <tr>
+                                                            <th scope="row">Lunes</th>
+                                                            <td>11:00am-9:00pm</td>
 
-    <div class="container">
-    <hr style="background-color: #e2e3e5">
-    <div class="d-flex justify-content-around">
-        <div class="row">
-            <div class="col">
-                <div class="media">
-                    <img src="{% static 'usuario/img/servicios/parked-car.png' %}" width="20px">
-                    <div class="media-body">
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">Lunes</th>
+                                                            <td>11:00am-9:00pm</td>
 
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn text-warning" data-toggle="modal" data-target="#exampleModal1" >
-                               Ver Horarios
-                            </button>
+                                                        </tr>
+                                                        <tr>
+                                                            <th scope="row">Lunes</th>
+                                                            <td>11:00am-9:00pm</td>
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel1">Horarios</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <table class="table">
-
-                                                <tbody>
-                                                <tr>
-                                                    <th scope="row">Lunes</th>
-                                                    <td>11:00am-9:00pm</td>
-
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Martes</th>
-                                                    <td>11:00am-9:00pm</td>
-
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Miercoles</th>
-                                                    <td>11:00am-9:00pm</td>
-
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Jueves</th>
-                                                    <td>11:00am-9:00pm</td>
-
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Viernes</th>
-                                                    <td>11:00am-9:00pm</td>
-
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">Sábado</th>
-                                                    <td>11:00am-9:00pm</td>
-
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn " data-dismiss="modal" style="background-color: #e60000 ; color: white">Close</button>
-                                            <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn " data-dismiss="modal"
+                                                            style="background-color: #e60000 ; color: white">Close
+                                                    </button>
+                                                    <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
-
-
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="media">
-                    <img src="../img/services/placeholder.png" class="mr-3" alt="..." width="16px">
-                    <div class="media-body">
-                        <!-- Button trigger modal -->
-                            <button type="button" class="btn text-warning" data-toggle="modal" data-target="#exampleModal">
-                                Formas de Pago
-                            </button>
+                    <div class="col">
+                        <div class="media">
+                            <img src="../img/services/placeholder.png" class="mr-3" alt="..." width="16px">
+                            <div class="media-body">
+                                <!-- Button trigger modal -->
+                                <button type="button" class="btn text-warning" data-toggle="modal"
+                                        data-target="#exampleModal">
+                                    Formas de Pago
+                                </button>
 
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Formas de Pago</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="col">
-                                                <div class="media">
-                                                    <img src="../img/services/016-money.png" class="mr-3" alt="...">
-                                                    <div class="media-body">
-                                                        <h5 class="mt-0">Tarjeta de Credito</h5>
-                                                        <p>Master Card, Visa, Catracha.</p>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Formas de Pago</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="col">
+                                                    <div class="media">
+                                                        <img src="../img/services/016-money.png" class="mr-3" alt="...">
+                                                        <div class="media-body">
+                                                            <h5 class="mt-0">Tarjeta de Credito</h5>
+                                                            <p>Master Card, Visa, Catracha.</p>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="media">
-                                                    <img src="..." class="mr-3" alt="...">
-                                                    <div class="media-body">
-                                                        <h5 class="mt-0">Tarjeta de Débito</h5>
-                                                        <p>Catracha, Visa</p>
+                                                <div class="col">
+                                                    <div class="media">
+                                                        <img src="..." class="mr-3" alt="...">
+                                                        <div class="media-body">
+                                                            <h5 class="mt-0">Tarjeta de Débito</h5>
+                                                            <p>Catracha, Visa</p>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                            <div class="col">
-                                                <div class="media">
-                                                    <img src="..." class="mr-3" alt="...">
-                                                    <div class="media-body">
-                                                        <h5 class="mt-0">Efectivo</h5>
-                                                        <p>Dolar, Lempira</p>
+                                                <div class="col">
+                                                    <div class="media">
+                                                        <img src="..." class="mr-3" alt="...">
+                                                        <div class="media-body">
+                                                            <h5 class="mt-0">Efectivo</h5>
+                                                            <p>Dolar, Lempira</p>
 
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn " data-dismiss="modal" style="background-color: #e60000 ; color: white" >Close</button>
-                                            <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn " data-dismiss="modal"
+                                                        style="background-color: #e60000 ; color: white">Close
+                                                </button>
+                                                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="media">
+                            <img src="../img/services/placeholder.png" class="mr-3" alt="..." width="16px">
+                            <div class="media-body">
+                                <h6 class="mt-0">Ubicacion</h6>
+                                <address>
+                                    Col. Sitramacsa, calle del IHSS , una cuadra adentro
+                                </address>
+                                <a href="#">Cómo llegar</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <hr style="background-color: #e2e3e5">
+        <div class="row">
+            <div class="col">
+                <h6>Acerca de nuestro Restaurante</h6>
+                <p>Esta es una breve descripción del restaurante y de los servicios que ofrecen, asi como
+                    información personalizada del restaurante. Esta es una breve descripción del restaurante y de
+                    los servicios que ofrecen, asi como información personalizada del restaurante.</p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <hr style="background-color: #e2e3e5">
+        <h6>Servicios</h6>
+
+        <br>
+        <div class="row">
+            <div class="col">
+                <div class="media">
+                    <img src="{% static 'usuario/img/servicios/parked-car.png' %}" class="mr-3" alt="..."
+                         width="20px">
+                    <div class="media-body">
+                        <h6 class="mt-0">Media heading</h6>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col">
+                <div class="media">
+                    <img src="{% static 'usuario/img/servicios/parked-car.png' %}" class="mr-3" alt="..."
+                         width="20px">
+                    <div class="media-body">
+                        <h6 class="mt-0">Media heading</h6>
+                    </div>
+                </div>
+
+
             </div>
             <div class="col">
                 <div class="media">
-                    <img src="../img/services/placeholder.png" class="mr-3" alt="..." width="16px">
+                    <img src="{% static 'usuario/img/servicios/parked-car.png' %}" class="mr-3" alt="..."
+                         width="20px">
                     <div class="media-body">
-                        <h6 class="mt-0">Ubicacion</h6>
-                        <address>
-                            Col. Sitramacsa, calle del IHSS , una cuadra adentro
-                        </address>
-                        <a href="#">Cómo llegar</a>
+                        <h6 class="mt-0">Media heading</h6>
                     </div>
                 </div>
+
+
             </div>
-        </div>
-
-    </div>
-
-
-
-</div>
-
-    <div class="container">
-    <hr style="background-color: #e2e3e5">
-    <div class="row">
-        <div class="col">
-            <h6>Acerca de nuestro Restaurante</h6>
-            <p>Esta es una breve descripción del restaurante y de los servicios que ofrecen, asi como información personalizada del restaurante. Esta es una breve descripción del restaurante y de los servicios que ofrecen, asi como información personalizada del restaurante.</p>
-
-        </div>
-    </div>
-</div>
-
-    <div class="container">
-    <hr style="background-color: #e2e3e5">
-    <h6>Servicios</h6>
-
-<br>
-    <div class="row">
-        <div class="col">
-            <div class="media">
-                <img src="{% static 'usuario/img/servicios/parked-car.png' %}" class="mr-3" alt="..." width="20px">
-                <div class="media-body">
-                    <h6 class="mt-0">Media heading</h6>
-                </div>
-        </div>
-
-
-
-    </div>
-
-        <div class="col">
-            <div class="media">
-                <img src="{% static 'usuario/img/servicios/parked-car.png' %}" class="mr-3" alt="..." width="20px">
-                <div class="media-body">
-                    <h6 class="mt-0">Media heading</h6>
-                </div>
-            </div>
-
-
-
-        </div>
-        <div class="col">
-            <div class="media">
-                <img src="{% static 'usuario/img/servicios/parked-car.png' %}" class="mr-3" alt="..." width="20px">
-                <div class="media-body">
-                    <h6 class="mt-0">Media heading</h6>
-                </div>
-            </div>
-
-
-
-        </div>
-        <div class="col">
-            <div class="media">
-                <img src="{% static 'usuario/img/servicios/parked-car.png' %}" class="mr-3" alt="..." width="20px">
-                <div class="media-body">
-                    <h6 class="mt-0">Media heading</h6>
-                </div>
-            </div>
-
-
-
-        </div>
-
-
-    </div>
-</div>
-
-    <div class="container">
-    <hr style="background-color: #e2e3e5">
-    <br>
-    <div class="d-flex justify-content-center">
-    <form>
-        <div class="row">
-
             <div class="col">
-                <input type='text' class="form-control" id='datetimepicker1' placeholder="Fecha de Reserva" style="width: 170px"/>
-            </div>
-
-            <div class="col">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text" for="inputGroupSelect03">Personas</label>
+                <div class="media">
+                    <img src="{% static 'usuario/img/servicios/parked-car.png' %}" class="mr-3" alt="..."
+                         width="20px">
+                    <div class="media-body">
+                        <h6 class="mt-0">Media heading</h6>
                     </div>
-                    <select class="custom-select" id="inputGroupSelect03" >
-                        <option selected>Choose...</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
                 </div>
+
+
             </div>
 
-            <div class="col">
-                <button type="submit" class="btn btn-primary">Reservar</button>
-            </div>
+
         </div>
-    </form>
     </div>
-    <br>
-    <hr style="background-color: #e2e3e5">
-<!--//////////////////////////-->
 
+    <div class="container">
+        <hr style="background-color: #e2e3e5">
+        <br>
+        <div class="d-flex justify-content-center">
+            <form action="{% url "createreserva" %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+
+                    <div class="col">
+                        <input type='date' class="form-control" name="hora_fecha_reserva" placeholder="Fecha de Reserva"
+                               style="width: 170px"/>
+                    </div>
+
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <label class="input-group-text" for="inputGroupSelect03">Personas</label>
+                            </div>
+                            <input class="form-control" type="number" name="cantidad_personas">
+                        </div>
+                    </div>
+                    <input type="hidden" id="estado_reserva" name="estado_reserva" value="1">
+                    <input type="hidden" id="usuario" name="usuario" value="1">
+                    <input type="hidden" id="sucursal" name="sucursal" value="1">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary">Reservar</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+        <br>
+        <hr style="background-color: #e2e3e5">
+        <!--//////////////////////////-->
         <div class="d-flex justify-content-center">
 
 
-    <div class="star_container">
-        <h5>Rating</h5>
+            <form action="{% url "crearcomentario" %}" method="post" enctype="multipart/form-data"
+                  class="star_container">
+                  {% csrf_token %}
+                <h5>Rating</h5>
 
-        <!--<h7>Click to rate:</h7>-->
-        <div class='starrr' id='star1'></div>
-        <div>&nbsp;
-            <span class='your-choice-was' style='display: none; font-size: 15px'>
-        Your rating was <span class='choice'></span>.
-      </span>
+                <!--<h7>Click to rate:</h7>-->
+                <div class='starrr' id='star1'></div>
+                <div class="d-flex justify-content-center">
+                    <div class="rating">
+                        <input id="star5" name="star" type="radio" value="5" class="radio-btn hide"/>
+                        <label for="star5">☆</label>
+                        <input id="star4" name="star" type="radio" value="4" class="radio-btn hide"/>
+                        <label for="star4">☆</label>
+                        <input id="star3" name="star" type="radio" value="3" class="radio-btn hide"/>
+                        <label for="star3">☆</label>
+                        <input id="star2" name="star" type="radio" value="2" class="radio-btn hide"/>
+                        <label for="star2">☆</label>
+                        <input id="star1" name="star" type="radio" value="1" class="radio-btn hide"/>
+                        <label for="star1">☆</label>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="form-group starrr">
+                    <label for="exampleFormControlTextarea1">Déjanos tu opinión</label>
+                    <textarea type="text" name="comentario" class="form-control" id="exampleFormControlTextarea1"
+                              rows="3"></textarea>
+                    <input type="hidden" id="usuario" name="usuario" value="1">
+                    <input type="hidden" id="sucursal" name="sucursal" value="1">
+                    <button type="submit" class="btn btn-primary" style="margin-top: 20px">Enviar</button>
+                </div>
+            </form>
+
         </div>
-
-        <div class="form-group starrr">
-            <label for="exampleFormControlTextarea1">Déjanos tu opinión</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            <button type="submit" class="btn btn-primary" style="margin-top: 20px">Enviar</button>
-        </div>
-
-
     </div>
 
-</div>
-</div>
-    <br>
-</div>
-
-
-
-{#//////////////////#}
-
-    <script>
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    // Next/previous controls
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    // Thumbnail image controls
-    function currentSlide(n) {
-        showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("mySlides");
-        var dots = document.getElementsByClassName("demo");
-        {#var captionText = document.getElementById("caption");#}
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        slides[slideIndex-1].style.display = "block";
-        dots[slideIndex-1].className += " active";
-        {#captionText.innerHTML = dots[slideIndex-1].alt;#}
-    }
-</script>
 
 
     {#//////////////////#}
 
-<script src="{% static 'usuario/js/stars/starrr.js' %}"></script>
+    <script>
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            {#var captionText = document.getElementById("caption");#}
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            {#captionText.innerHTML = dots[slideIndex-1].alt;#}
+        }
+    </script>
+
+
+    {#//////////////////#}
+
+    <script src="{% static 'usuario/js/stars/starrr.js' %}"></script>
 
     <script type="text/javascript">
-    $(function () {
-        $('#datetimepicker1').datetimepicker();
-    });
-</script>
-<script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+        });
+    </script>
+    <script type="text/javascript">
 
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-36251023-1']);
-    _gaq.push(['_setDomainName', 'jqueryscript.net']);
-    _gaq.push(['_trackPageview']);
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
 
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
 
-</script>
+    </script>
 
 
     <!--///////////////////////star////////////////////////////////////////-->
-<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js"></script>-->
-
-<script>
-    $('#star1').starrr({
-        change: function(e, value){
-            if (value) {
-                $('.your-choice-was').show();
-                $('.choice').text(value);
-            } else {
-                $('.your-choice-was').hide();
-            }
-        }
-    });
+    <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.js"></script>-->
 
 
-</script>
-<!--///////////////////////////////////////////////////////////////-->
+    <!--///////////////////////////////////////////////////////////////-->
 
 
 
@@ -456,5 +424,5 @@
 {% block js %}
     <script src="{% static 'usuario/js/date-time/datetimepicker.js' %}"></script>
     <script src="{% static 'usuario/js/date-time/bootstrap-datetimepicker.min.js' %}"></script>
-
+    <script src="{% static 'usuario/js/mostrar_restaurante.js' %}"></script>
 {% endblock %}

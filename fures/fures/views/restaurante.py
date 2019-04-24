@@ -1,6 +1,6 @@
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
-from django.shortcuts import render
+
 
 from ..models import *
 from django.shortcuts import render

@@ -6,8 +6,9 @@ from ..models import *
 from django.core.exceptions import ValidationError
 
 
-def sucursaleshtml(request):
-    return render(request, 'usuario/sucursales.html')
+def sucursalhtml(request, id):
+    return render(request, 'usuario/restaurante.html')
+
 
 def ver_sucursales(request):
     if 'nombre' in request.GET:
@@ -21,10 +22,40 @@ def ver_sucursales(request):
     return res
 
 
-def ver_sucursal(req, id):
+def ver_sucursales_por_restaurante(req, id):
     sucursal = serializers.serialize("json",Sucursal.objects.filter(restaurante__id=id))
     res = HttpResponse(sucursal, content_type="application/json")
     return  res
+
+
+def ver_imagenes(req, id):
+    imagen = serializers.serialize("json",ImangenSucursal.objects.filter(sucursal__id=id))
+    res = HttpResponse(imagen, content_type="application/json")
+    return  res
+
+
+def ver_horario(req, id):
+    horario = serializers.serialize("json",Horario.objects.filter(sucursal__id=id))
+    res = HttpResponse(horario, content_type="application/json")
+    return  res
+
+
+def ver_platos_sucursal(req, id):
+    platos = serializers.serialize("json", Plato.objects.filter(Sucursal__id=id))
+    res = HttpResponse(platos, content_type="application/json")
+    return  res
+
+
+def ver_sucursal(req, id):
+    sucursal = Sucursal.objects.filter(id=id).first()
+    return JsonResponse({
+        'id': sucursal.id,
+        'direccion': sucursal.direccion,
+        'telefono': sucursal.telefono,
+        'capacidad': sucursal.capacidad,
+        'restaurante': str(sucursal.restaurante)
+
+    })
 
 
 def crear_sucursal(req):

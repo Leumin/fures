@@ -31,10 +31,10 @@ def crear_comentario(req):
     exito = True
     try:
         nuevo_comentario = Comentario()
-        nuevo_comentario.unique_together = req.POST.get('sucursal', None)
-        nuevo_comentario.unique_together = req.POST.get('usuario', None)
+        nuevo_comentario.sucursal_id = req.POST.get('sucursal', None)
+        nuevo_comentario.usuario_id = req.POST.get('usuario', None)
         nuevo_comentario.comentario = req.POST.get('comentario', None)
-        nuevo_comentario.puntuacion = req.POST.get('puntuacion', None)
+        nuevo_comentario.puntuacion = req.POST.get('star', None)
         nuevo_comentario.full_clean()
         nuevo_comentario.save()
     except ValidationError as e:
@@ -51,11 +51,11 @@ def actualizar_comentario(req, id):
     exito = True
     try:
         comentario = Comentario.objects.filter(id=id).first()
-        comentario.unique_together = req.POST.get('sucursal', '')
-        comentario.unique_together = req.POST.get('usuario', '')
+        comentario.sucursal_id = req.POST.get('sucursal', '')
+        comentario.usuario_id = req.POST.get('usuario', '')
         comentario.comentario = req.POST.get('comentario', '')
         comentario.puntuacion = req.POST.get('puntuacion', '')
-        comentario.full_clean()
+        # comentario.full_clean()
         comentario.save()
     except ValidationError as e:
         errores = e.messages

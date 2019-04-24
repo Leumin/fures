@@ -26,6 +26,11 @@ SECRET_KEY = '!@-1341m3jre7cle5u3s$hfh-s7n-@kguv$dq6y5exj+*^lku+'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'lukamodric0105@gmail.com'
+EMAIL_HOST_PASSWORD ='Aq12wsxz'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 
 # Application definition
