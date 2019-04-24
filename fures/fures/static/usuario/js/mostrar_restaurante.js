@@ -58,7 +58,7 @@ Promise.all([axios.get("/sucursal/ver/sucursal/" + id), axios.get("/sucursal/ima
                 <div class="row">
                     <div class="col">
                         <div class="media">
-                            <img src="{% static 'usuario/img/servicios/parked-car.png' %}" width="20px">
+                            <img src="{% static 'usuario/img/servicios/time.png' %}" width="20px">
                             <div class="media-body">
 
                                 <!-- Button trigger modal -->
