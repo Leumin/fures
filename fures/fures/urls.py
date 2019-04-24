@@ -96,7 +96,7 @@ urlpatterns = [
     #USUARIO
     path('usuario/', ver_usuarios),
     path('usuario/ver/<int:id>/', ver_usuario),
-    path('usuario/crear', crear_usuario),
+    path('usuario/crear', crear_usuario, name='crearusuario'),
     path('usuario/actualizar/<int:id>', actualizar_usuario),
     #RESERVA
     path('reserva/', ver_reservas),

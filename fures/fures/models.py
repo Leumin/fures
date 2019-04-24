@@ -219,7 +219,7 @@ class Usuario(models.Model):    # Se agregaron validaciones
                                           'null': 'Este campo no puede quedar null, por favor proporcione una direccion de Usuario',
                                           'blank': 'Este campo no puede quedar vacío, por favor proporcione una direccion de Usuario'
                                       })
-    nombre_usuario = models.CharField(max_length=45,error_messages={
+    nombre_usuario = models.CharField(unique=True, max_length=45,error_messages={
                                           'max_length': 'El nombre de Usuario no puede ser mayor a 45  caracteres ',
                                           'null': 'Este campo no puede quedar null, por favor proporcione Nombre de Usuario',
                                           'blank': 'Este campo no puede quedar vacío, por favor proporcione un Nombre de Usuario'
