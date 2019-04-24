@@ -93,6 +93,7 @@ $(function () {
     $("#inputNumero").keyup(function () {
         var This = $("#inputNumero");
         var user = $("#inputNumero").val();
+        var re = /^[0-9]$/;
         var valido = expre.test(user);
         if (user == "" || user == null) {
             This.attr('style', 'border: 1px solid #F00');
@@ -136,12 +137,14 @@ $(function () {
             _this.attr('style', 'background:#FF4A4A');
         }
     });
+        var regex = /[^\d]/g;
+          var numTel = document.getElementById("inputNumero");
+            numTel.addEventListener("keyup", function(){
+            if (numTel.value == ""){
+            numTel.value = "+";
+            }
+            numTel.value = numTel.value.replace(regex,"");
+            })
 
 
-    var nav4 = window.Event ? true : false;
-
-    function aceptNum(evt) {
-        var key = nav4 ? evt.which : evt.keyCode;
-        return (key <= 13 || (key >= 48 && key <= 57));
-    }
 });
