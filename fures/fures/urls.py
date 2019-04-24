@@ -19,28 +19,39 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
+from .views.contacto import crear_msj_contacto
 from .views.categoria import ver_categorias, ver_categoria, crear_categoria, actualizar_categoria
 from .views.categoriaPlato import ver_categoriasPlato, ver_categoriaPlato, crear_categoriaPlato, \
     actualizar_categoriaPlato
 from .views.comentario import ver_comentarios, ver_comentario, crear_comentario, actualizar_comentario
 from .views.index import inicio, login, formularioRegistro
+from .views.index_admin import sucursal, Visualizar_sucursal, Crear_Plato, Visualizar_Plato, Crear_Menus, \
+    Visualizar_Menus
 from .views.menu import ver_menus, ver_menu, crear_menu, actualizar_menu
-from .views.plato import ver_platos, ver_plato, crear_plato, actualizar_plato
+from .views.plato import ver_plato, crear_plato, actualizar_plato
 from .views.promocion import ver_promociones, ver_promocion, crear_promocion, actualizar_promocion
 from .views.resereva import ver_reservas, ver_reserva, crear_reserva, actualizar_reserva
 from .views.restaurante import restauranteshtml, ver_restaurantes, ver_restaurante, crear_restaurante, \
     actualizar_restaurante, ultimos_restaurantes
 from .views.rol import ver_roles, ver_rol, crear_rol, actualizar_rol
 from .views.servicio import ver_servicios, ver_servicio, crear_servicio, actualizar_servicio
-from .views.sucursal import ver_sucursales, ver_sucursal, crear_sucursal, actualizar_sucursal, sucursaleshtml
+from .views.sucursal import ver_sucursales, ver_sucursales_por_restaurante, crear_sucursal, actualizar_sucursal, \
+    sucursalhtml, ver_sucursal, ver_imagenes, ver_horario, ver_platos_sucursal
 from .views.tipoUsuario import ver_tiposUsuario, ver_tipoUsuario, crear_tipoUsuario, actualizar_tipoUsuario
 from .views.usuario import ver_usuarios, ver_usuario, crear_usuario, actualizar_usuario
 from . import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', inicio, name='inicio'),
     path('index', login, name='login'),
     path('index/', formularioRegistro, name='formularioRegistro'),
+    path('index_admin/', sucursal, name='sucursal'),
+    path('index_admin/Visualizar/', Visualizar_sucursal, name='Visualizar_sucursal'),
+    path('index_admin/Crear/', Crear_Plato, name='Crear_Plato'),
+    path('index_admin/Visualizar/', Visualizar_Plato, name='Visualizar_Plato'),
+    path('index_admin/Creae/', Crear_Menus, name='Crear_Menus'),
+    path('index_admin/Visualizar/', Visualizar_Menus, name='Visualizar_Menus'),
     #CATEGORIAS
     path('categorias/', ver_categorias),
     path('categorias/ver/<int:id>/', ver_categoria, views.categoria),
@@ -79,7 +90,6 @@ urlpatterns = [
     path('servicio/crear', crear_servicio),
     path('servicio/actualizar/<int:id>', actualizar_servicio),
     #PLATO
-    path('plato/', ver_platos),
     path('plato/ver/<int:id>/', ver_plato),
     path('plato/crear', crear_plato),
     path('plato/actualizar/<int:id>', actualizar_plato),
@@ -91,12 +101,16 @@ urlpatterns = [
     #RESERVA
     path('reserva/', ver_reservas),
     path('reserva/ver/<int:id>/', ver_reserva),
-    path('reserva/crear', crear_reserva),
+    path('reserva/crear', crear_reserva, name='createreserva'),
     path('reserva/actualizar/<int:id>', actualizar_reserva),
     #SUCURSAL
-    path('sucursal/', sucursaleshtml, name='sucursalhtml'),
+    path('sucursal/unico/<int:id>', sucursalhtml, name='sucursalhtml'),
     path('sucursal/', ver_sucursales),
-    path('sucursal/ver/<int:id>/', ver_sucursal),
+    path('sucursal/imagen/<int:id>', ver_imagenes),
+    path('sucursal/horario/<int:id>', ver_horario),
+    path('sucursal/platos/<int:id>', ver_platos_sucursal, name='verplatos'),
+    path('sucursal/ver/<int:id>/', ver_sucursales_por_restaurante),
+    path('sucursal/ver/sucursal/<int:id>/', ver_sucursal),
     path('sucursal/crear', crear_sucursal),
     path('sucursal/actualizar/<int:id>', actualizar_sucursal),
     #PROMOCION
@@ -107,9 +121,10 @@ urlpatterns = [
     #COMENTARIO
     path('comentario/', ver_comentarios),
     path('comentario/ver/<int:id>/', ver_comentario),
-    path('comentario/crear', crear_comentario),
+    path('comentario/crear', crear_comentario, name='crearcomentario'),
     path('comentario/actualizar/<int:id>', actualizar_comentario),
-
+    #contacto
+    path('contacto/crear', crear_msj_contacto, name='crearcontacto'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

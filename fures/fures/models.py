@@ -13,30 +13,34 @@ class Categoria(models.Model):#Se agregaron validaciones
         'blank':'Este campo no puede quedar vacío, por favor proporcione una descripcion'
     })
 
+class Contacto(models.Model):
+    id = models.AutoField(primary_key=True)
+    nombre = models.TextField(max_length=45)
+    correo = models.EmailField(error_messages={
+        'invalid':'Correo no valido'
+    })
+    telefono = models.CharField(max_length=8,error_messages={
+        'max_length':'Ha excedido la cantidad permitida(8) de caracteres en el telefono',
+        'null':'Este campo no puede quedar null, por favor proporcione un numero de telefono',
+        'blank':' Este campo no puede quedar vacío, por favor proporcione un numero de telefono'
+    })
+    comentario = models.TextField(max_length=999, error_messages={
+        'max_length': 'Al parecer ha sobrepasado la cantidad permitida(999 de caracteres)'
+    })
+
 class CategoriaRestaurante(models.Model):
     unique_together = ("Categoria","Restaurante")
 
+
 class Comentario(models.Model):#Se agregaron validaciones
-    unique_together = ("Sucursal","Usuario")
+    id = models.AutoField(primary_key=True)
+    usuario = models.ForeignKey('Usuario', on_delete=models.PROTECT)
+    sucursal = models.ForeignKey('Sucursal', on_delete=models.PROTECT)
     comentario = models.TextField(max_length=100,error_messages={
         'max_length': 'Al parecer ha sobrepasado la cantidad permitida(100 de caracteres)'
     })
     puntuacion = models.IntegerField()
 
-
-class Menu(models.Model):#Se agregaron validaciones
-    id = models.AutoField(primary_key=True)
-    nombre_menu = models.TextField(max_length=30,error_messages={
-        'max_length':'Al parecer ha sobrepasado la cantidad de caracteres permitidos(30)',
-        'null':' El nombre del menu no puede quedar null, por favor proporcione el nombre del menu',
-        'blank':'El nombre del menu no puede quedar vacio,por favor proporcione el nombre del nemu'
-    })
-    descripcion = models.TextField(max_length=50,blank=True,error_messages={
-        'max_length':'Al parecer ha sobrepasado la cantidad permitida(50) de caracteres'
-    })
-
-class MenuSucursal(models.Model):
-    unique_together = ("Menu","Sucursal")
 
 class Plato(models.Model):
     id = models.AutoField(primary_key=True)
@@ -50,13 +54,13 @@ class Plato(models.Model):
         'null':'Por favor ingrese una cantidad para el precio',
         'blank':'Este campo no puede quedar vacio, por favor ingrese una cantidad para el precio'
     })
-
+    imagen = models.ImageField(upload_to='platos', blank=False, null=False)
     def clean(self):
         if not self.precio.isnumeric():
             raise ValidationError("El precio debe contener solo datos numericos")
 
     estado = models.BooleanField(default=True)#verificar que tipo de validaciones se puede hacer aqui
-    menu = models.ForeignKey('Menu', on_delete=models.PROTECT)#verificar que tipo de validaciones se puede hacer aqui
+    Sucursal = models.ForeignKey('Sucursal', on_delete=models.PROTECT)#verificar que tipo de validaciones se puede hacer aqui
 
 
 class Promocion(models.Model):#Se agregaron validaciones
@@ -86,13 +90,9 @@ class Reserva(models.Model):#Se agregaron validaciones
         'blank':'Este campo no puede quedar vacío, por favor proporcione los datos que se piden'
     })
 
-    def clean(self):
-        if not self.cantidad_personas.isnumeric():
-            raise ValidationError("La cantidad de personas debe contener solo datos numericos")
-
     sucursal = models.ForeignKey('Sucursal',on_delete=models.PROTECT)
     usuario = models.ForeignKey('Usuario', on_delete=models.PROTECT)
-    motivo_cancelacion = models.TextField(max_length=1000,blank=True,error_messages={
+    motivo_cancelacion = models.TextField(max_length=1000,blank=True,null=True,error_messages={
         'max_length':'Al parecer a sobrepasado la cantidad permitida(1000) de caracteres'
     })#verificar esta parte con la BD
 
@@ -126,6 +126,7 @@ class Servicio(models.Model):#Se agregaron validaciones
         'max_length':'Este campo no puede contener mas de 45 caracteres',
 
     })
+    imagen = models.ImageField(upload_to='servicios', blank=False, null=False)
     sucursal = models.ForeignKey('Sucursal',on_delete=models.PROTECT)
 
 
@@ -146,16 +147,14 @@ class Sucursal(models.Model): #Se agregaron validaciones
         if not self.telefono.isnumeric():
             raise ValidationError("El numero de telefono debe contener solo datos numericos")
 
+    descripcion = models.TextField(max_length=999, error_messages={
+        'max_length': 'Este campo no puede contener mas de 45 caracteres',
 
+    })
     capacidad = models.IntegerField(error_messages={
         'null':'Es necesario ingresar una cantidad para la capacidad',
         'blank':'Este campo no puede quedar vacío, por favor ingrese una cantidad para la capacidad'
     })
-
-    # def clean(self):
-    #     if not self.capacidad.isnumeric():
-    #         raise ValidationError("La capacidad debe contener solo datos numericos")
-
     estado = models.BooleanField(default=True)
     restaurante = models.ForeignKey('Restaurante',on_delete=models.PROTECT)
 
@@ -194,7 +193,7 @@ class ImangenSucursal(models.Model):
 #         'blank':'Este campo no puede quedar vacío, por favor complete la descripcion'
 #     })
 
-class Usuario(AbstractBaseUser):    # Se agregaron validaciones
+class Usuario(models.Model):    # Se agregaron validaciones
     id = models.AutoField(primary_key=True)
     nombre_persona = models.CharField(max_length=45, error_messages={
                                           'max_length': 'El Nombre no puede ser mayor a 45  caracteres ',
@@ -244,13 +243,6 @@ class Usuario(AbstractBaseUser):    # Se agregaron validaciones
             raise ValidationError("El numero de telefono debe contener solo datos numericos")
 
     estado = models.BooleanField(default=True)
-
-    USERNAME_FIELD = 'id'
-
-    # codigo_rol = models.ForeignKey('Rol',on_delete=models.PROTECT)
-
-# class UsuarioTipoUsuario(models.Model):
-#     unique_together = ("Usuario","TipoUsuario")
 
 
 class CategoriaPlato(models.Model):# Se agregaron validaciones

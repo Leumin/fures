@@ -1,7 +1,6 @@
 function dataUser(id) {
     Promise.all([axios.get("/restaurante/ver/"+ id), axios.get("/sucursal/ver/"+id)])
         .then(([res, suc]) => {
-            console.log(suc);
             let modal = "";
             modal += `
                 <h2 class="text-uppercase">${Object.values(res.data)[1]}</h2>
@@ -19,31 +18,30 @@ function dataUser(id) {
                                 <h4 class="section-heading text-uppercase">Sucursales</h4>
                         `;
 
-
+                modal += `
+                    <div class="row justify-content-center" style=" overflow-y: scroll; height: 25rem">                
+                `;
             for (var i = 0; i < suc.data.length; i++) {
                  modal += `
 
 <!--    <h5 class="card-title">${suc.data[i].fields.direccion}</h5>-->
-
-
-
- 
-                             <div class="col-lg-8 mx-auto">
-                            <div class="card">
-  
-  <div class="card-body">
-    <h5 class="card-title">${suc.data[i].fields.direccion}</h5>
-    <h6 class="card-title">${suc.data[i].fields.telefono}</h6>
-<!--    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
-    <a href="#" class="btn btn-primary" onclick="">Visitar</a>
-  </div>
-</div>
-                       </div>
-                            
-   
+                            <div class="col-5">
+                               <div class="card" style="height: 16rem; margin: 10px;">
+                                     <div class="card-body">
+                                           <h5 class="card-title">${suc.data[i].fields.direccion}</h5>
+                                           <h6 class="card-title">${suc.data[i].fields.telefono}</h6>
+                                       <!--    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
+                                           <a href="/sucursal/unico/${suc.data[i].pk}" class="btn btn-primary" >Visitar</a>
+                                     </div>
+                                </div>
+                            </div>
                  `
             }
+            modal += `
+            </div>
+            `;
             var elemento = document.getElementById('mostrar_modal');
             elemento.innerHTML = modal;
+
         });
 }

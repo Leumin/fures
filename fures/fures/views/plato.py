@@ -4,17 +4,6 @@ from ..models import *
 from django.core.exceptions import ValidationError
 
 
-def ver_platos(request):
-    if 'nombre' in request.GET:
-        plato = serializers.serialize("json",
-                                     Plato.objects.filter(
-                                         nombre__icontains=request.GET['nombre']))
-    else:
-        plato = serializers.serialize("json", Plato.objects.all())
-    res = HttpResponse(plato, content_type="application/json")
-    res['Access-Control-Allow-Origin'] = '*'
-    return res
-
 
 def ver_plato(req, id):
     plato = Plato.objects.filter(id=id).first()
