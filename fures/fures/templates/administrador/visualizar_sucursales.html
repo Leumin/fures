@@ -1,0 +1,51 @@
+{% extends 'administrador/admin_base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualizar Sucursales</title>
+</head>
+<body>
+{% block contenido %}
+ <div class="container-fluid">
+     <div class="card shadow mb-4">
+            <div class="card-header py-3">
+              <h6 class="m-0 font-weight-bold text-primary">Sucursales</h6>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                      <th>Dirección</th>
+                      <th>Teléfono</th>
+                      <th>Capacidad</th>
+
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>Mall Megaplaza</td>
+                      <td>987456221</td>
+                      <td>123</td>
+                    </tr>
+                    <tr>
+                      <td>Mall Megaplaza</td>
+                      <td>987456221</td>
+                      <td>123</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+ </div>
+
+{% endblock %}
+
+
+</body>
+</html>

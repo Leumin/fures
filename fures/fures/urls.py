@@ -25,6 +25,8 @@ from .views.categoriaPlato import ver_categoriasPlato, ver_categoriaPlato, crear
     actualizar_categoriaPlato
 from .views.comentario import ver_comentarios, ver_comentario, crear_comentario, actualizar_comentario
 from .views.index import inicio, login, formularioRegistro
+from .views.index_admin import sucursal, Visualizar_sucursal, Crear_Plato, Visualizar_Plato, Crear_Menus, \
+    Visualizar_Menus
 from .views.menu import ver_menus, ver_menu, crear_menu, actualizar_menu
 from .views.plato import ver_plato, crear_plato, actualizar_plato
 from .views.promocion import ver_promociones, ver_promocion, crear_promocion, actualizar_promocion
@@ -44,6 +46,12 @@ urlpatterns = [
     path('', inicio, name='inicio'),
     path('index', login, name='login'),
     path('index/', formularioRegistro, name='formularioRegistro'),
+    path('index_admin/', sucursal, name='sucursal'),
+    path('index_admin/Visualizar/', Visualizar_sucursal, name='Visualizar_sucursal'),
+    path('index_admin/Crear/', Crear_Plato, name='Crear_Plato'),
+    path('index_admin/Visualizar/', Visualizar_Plato, name='Visualizar_Plato'),
+    path('index_admin/Creae/', Crear_Menus, name='Crear_Menus'),
+    path('index_admin/Visualizar/', Visualizar_Menus, name='Visualizar_Menus'),
     #CATEGORIAS
     path('categorias/', ver_categorias),
     path('categorias/ver/<int:id>/', ver_categoria, views.categoria),

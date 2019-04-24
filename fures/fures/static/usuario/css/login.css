@@ -66,11 +66,11 @@ html {
 }
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
     background-color: #c0392b !important;
-}ç
+}
 
- .d-flex justify-content-center links{
-    background-color: white !important;
- }
+ /*.d-flex justify-content-center links{*/
+ /*   background-color: white !important;*/
+ /*}*/
 html,body{
     height: 100%;
     width: 100%;
