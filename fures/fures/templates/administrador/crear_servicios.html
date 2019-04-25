@@ -1,0 +1,68 @@
+{% extends 'administrador/admin_base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block contenido %}
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+
+        <div class="d-flex justify-content-center">
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <!-- Default Card Example -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Crear Servicio
+                    </div>
+                    <div class="card-body" style="width: 500px">
+
+                        <div class="form-row">
+                            <div class="col-md-12 mb-3">
+                                <label for="validationCustom01">Descripción</label>
+                                <input type="text" class="form-control" id="validationCustom01"
+                                       placeholder="Ingrese la Descripción" required>
+
+                            </div>
+                            <div class="form-group" style="padding-left: 5px;width: 910px">
+                                <label for="exampleFormControlFile" style="
+ font-size: 14px;
+ font-weight: 600;
+ color: #e60000;
+ background-color: #eee;
+ display: inline-block;
+ transition: all .5s;
+ cursor: pointer;
+ padding: 15px 40px !important;
+ text-transform: uppercase;
+ width: fit-content;
+ text-align: center;">Elegir Imagen</label>
+                                <input type="file" class="fo "
+                                       id="exampleFormControlFile" style="width: 0.1px;
+ height: 0.1px;
+ opacity: 0;
+ overflow: hidden;
+ position: absolute;
+ z-index: -1;">
+                            </div>
+
+                        </div>
+                        <button class="btn btn-primary" type="submit" style="width: 100%">Agregar</button>
+
+                    </div>
+                </div>
+                {% csrf_token %}
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
+</body>
+</html>

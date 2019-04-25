@@ -48,7 +48,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="../admin/index.html">
 {#          <i class="fas fa-fw fa-tachometer-alt"></i>#}
-          <img class="fas fa-fw " src="{% static 'usuario/img/servicios/parked-car.png' %}" width="24px">
+          <img class="fas fa-fw " src="http://localhost:8000/media/iconos/046-home.png " width="24px">
             <span>Home</span></a>
       </li>
 
@@ -63,13 +63,15 @@
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Sucursal</span>
+{#          <i class="fas fa-fw fa-cog"></i>#}
+           <img class="fas fa-fw " src="http://localhost:8000/media/iconos/013-shop.png " width="24px">
+            <span>Sucursal</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Gestionar Sucursal:</h6>
             <a class="collapse-item" href="{% url "sucursal" %}">Crear Sucursal</a>
+            <a class="collapse-item" href="{% url "sucursal" %}">Modificar Sucursal</a>
             <a class="collapse-item" href="{% url "Visualizar_sucursal" %}">Visualizar Sucursales</a>
           </div>
         </div>
@@ -78,7 +80,7 @@
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
+        <img class="fas fa-fw " src="http://localhost:8000/media/iconos/011-tray.png " width="24px">
           <span>Plato</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
@@ -101,24 +103,43 @@
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
+          <img class="fas fa-fw " src="http://localhost:8000/media/iconos/031-menu-1.png " width="24px">
           <span>Menu</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Gestionar Menu:</h6>
-            <a class="collapse-item" href="{% url "Crear_Menus" %}">Crear Menu</a>
-            <a class="collapse-item" href="{% url "Visualizar_Menus" %}">Visualizar Menu</a>
+            <a class="collapse-item" href="#">Crear Menu</a>
+            <a class="collapse-item" href="#">Visualizar Menu</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages1" aria-expanded="true" aria-controls="collapsePages">
+          <img class="fas fa-fw " src="http://localhost:8000/media/iconos/031-menu-1.png " width="24px">
+          <span>Servicios</span>
+        </a>
+        <div id="collapsePages1" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Gestionar Servicios:</h6>
+            <a class="collapse-item" href="#">Crear Servicios</a>
+            <a class="collapse-item" href="#">Visualizar Servicios</a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages2" aria-expanded="true" aria-controls="collapsePages">
+          <img class="fas fa-fw " src="http://localhost:8000/media/iconos/sign.png " width="60px">
+          <span>Reservas</span>
+        </a>
+        <div id="collapsePages2" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Gestionar Reservas:</h6>
+            <a class="collapse-item" href="#">Visualizar Reservas</a>
           </div>
         </div>
       </li>
 
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li>
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
@@ -149,7 +170,8 @@
 
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
+{#            <i class="fa fa-bars"></i>#}
+          <img class="fas fa-fw " src="http://localhost:8000/media/iconos/047-back.png " width="24px">
           </button>
 
           <!-- Topbar Search -->
@@ -158,7 +180,7 @@
               <input type="text" class="form-control bg-light border-0 small" style="height:40px" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
                 <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
+                  <img class="fas fa-fw " src="http://localhost:8000/media/iconos/001-search.png " width="24px">
                 </button>
               </div>
             </div>
@@ -353,7 +375,7 @@
 
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
+    <img class="fas fa-fw " src="http://localhost:8000/media/iconos/up-arrow.png " width="24px">
   </a>
 
   <!-- Logout Modal-->

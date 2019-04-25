@@ -18,7 +18,7 @@ Promise.all([axios.get("/sucursal/ver/sucursal/" + id), axios.get("/sucursal/ima
         for (var i = 0; i < img.data.length; i++) {
             html += `
                 <div class="mySlides" >
-                    <img src="http://localhost:8000/media/${img.data[i].fields.imagen}"  onload="currentSlide(1)" style="width:1764px; height: 617px">
+                    <img src="http://localhost:8000/media/${img.data[i].fields.imagen}"  onload="currentSlide(1)" style="width:1200px; height: 617px">
                 </div>
               `
         }
@@ -35,7 +35,7 @@ Promise.all([axios.get("/sucursal/ver/sucursal/" + id), axios.get("/sucursal/ima
         for (var i = 0; i < img.data.length; i++) {
             html += `
                     <div class="column">
-                        <img class="demo cursor" src="http://localhost:8000/media/${img.data[i].fields.imagen}" style="width:288px; height: 192px" onclick="currentSlide(${i + 1})" alt="">
+                        <img class="demo cursor" src="http://localhost:8000/media/${img.data[i].fields.imagen}" style="width:200px; height: 152px" onclick="currentSlide(${i + 1})" alt="">
                     </div> 
              `
         }
@@ -58,7 +58,7 @@ Promise.all([axios.get("/sucursal/ver/sucursal/" + id), axios.get("/sucursal/ima
                 <div class="row">
                     <div class="col">
                         <div class="media">
-                            <img src="{% static 'usuario/img/servicios/parked-car.png' %}" width="20px">
+                            <img src="http://localhost:8000/media/iconos/time.png" width="20px">
                             <div class="media-body">
 
                                 <!-- Button trigger modal -->
@@ -113,9 +113,9 @@ Promise.all([axios.get("/sucursal/ver/sucursal/" + id), axios.get("/sucursal/ima
                     </div>
                     <div class="col">
                         <div class="media">
-                            <img src="../img/services/placeholder.png" class="mr-3" alt="..." width="16px">
+                            <img src="http://localhost:8000/media/iconos/031-menu-1.png" class="mr-3" alt="..." width="25px">
                             <div class="media-body">
-                                <!-- Button trigger modal -->
+                                 
                                 <button type="button" class="btn text-warning" data-toggle="modal"
                                         data-target="#exampleModal">
                                     Menu
@@ -174,7 +174,7 @@ Promise.all([axios.get("/sucursal/ver/sucursal/" + id), axios.get("/sucursal/ima
                     </div>
                     <div class="col">
                         <div class="media">
-                            <img src="../img/services/placeholder.png" class="mr-3" alt="..." width="16px">
+                            <img src="http://localhost:8000/media/iconos/014-placeholder.png" class="mr-3" alt="..." width="25px">
                             <div class="media-body">
                                 <h6 class="mt-0">Ubicacion</h6>
                                 <address>

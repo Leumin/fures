@@ -127,7 +127,7 @@ class Servicio(models.Model):#Se agregaron validaciones
         'max_length':'Este campo no puede contener mas de 45 caracteres',
 
     })
-    imagen = models.ImageField(upload_to='servicios', blank=False, null=False)
+    imagen = models.ImageField(upload_to='iconos', blank=False, null=False)
     sucursal = models.ForeignKey('Sucursal',on_delete=models.PROTECT)
 
 
