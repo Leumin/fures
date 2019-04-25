@@ -1,5 +1,6 @@
-axios.get("/restaurante/ultimos")
+axios.get("/restaurante/todos")
     .then(function (res) {
+        console.log(res);
         let html = "";
         for (var i = 0; i < res.data.length; i++) {
             html += `
@@ -23,6 +24,6 @@ axios.get("/restaurante/ultimos")
 
         }
 
-        var elemento = document.getElementById('restaurantes_recientes');
+        var elemento = document.getElementById('todos_restaurantes');
         elemento.innerHTML = html;
     });

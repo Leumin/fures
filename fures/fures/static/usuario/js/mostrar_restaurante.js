@@ -2,15 +2,18 @@ var actual = window.location + '';
 var split = actual.split("/");
 var id = split[split.length - 1];
 
+document.getElementById("sucursal").value = id;
+document.getElementById("sucursal2").value = id;
 
-Promise.all([axios.get("/sucursal/ver/sucursal/" + id), axios.get("/sucursal/imagen/" + id), axios.get("/sucursal/horario/" + id), axios.get("/sucursal/platos/"+id)])
-    .then(([suc, img, hor, menu]) => {
+
+Promise.all([axios.get("/sucursal/ver/sucursal/" + id), axios.get("/sucursal/imagen/" + id), axios.get("/sucursal/horario/" + id), axios.get("/sucursal/platos/" + id), axios.get("/sucursal/servicio/" + id)])
+    .then(([suc, img, hor, menu, serv]) => {
         let html = "";
         html += `
  
     <div class="padre">
         <div class="hijo">
-            <h2 style="text-align:center">${Object.values(suc.data)[4]}</h2>
+            <h2 style="text-align:center">${Object.values(suc.data)[5]}</h2>
             <!-- Container for the image gallery -->
             <div class="imgcontainer">
      `;
@@ -188,9 +191,41 @@ Promise.all([axios.get("/sucursal/ver/sucursal/" + id), axios.get("/sucursal/ima
 
             </div>
         </div>
+        <div class="container">
+            <hr style="background-color: #e2e3e5">
+            <div class="row">
+                <div class="col">
+                    <h6>Acerca de nuestro Restaurante</h6>
+                    <p>${Object.values(suc.data)[4]}</p>
     
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <hr style="background-color: #e2e3e5">
+            <h6>Servicios</h6>
 
-`;
+            <br>
+            <div class="row">
+            `;
+        for (var i = 0; i < serv.data.length; i++) {
+            html += `
+                <div class="col">
+                    <div class="media">
+                        <img src="{% static 'usuario/img/iconos/parked-car.png' %}" class="mr-3" alt="..."
+                             width="20px">
+                        <div class="media-body">
+                            <h6 class="mt-0">Media heading</h6>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        `;
+        }
         var elemento = document.getElementById('restauranteinfo');
         elemento.innerHTML = html;
 

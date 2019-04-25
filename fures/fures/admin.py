@@ -6,7 +6,7 @@ from .models import ImangenSucursal
 from django.contrib import admin
 
 class restaurante(admin.ModelAdmin):
-    fields = ['nombre', 'descripcion', 'imagen', 'estado']
+    fields = ['nombre', 'descripcion', 'imagen', 'estado', 'usuario_administrador']
     list_display = ('nombre', 'estado')
 
 

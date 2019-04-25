@@ -38,7 +38,7 @@ def crear_reserva(req):
         nueva_reserva.estado_reserva = req.POST.get('estado_reserva', None)
         nueva_reserva.cantidad_personas = req.POST.get('cantidad_personas', None)
         nueva_reserva.sucursal_id = req.POST.get('sucursal', None)
-        nueva_reserva.usuario_id = req.POST.get('usuario', None)
+        nueva_reserva.usuario_id = req.session['usuario_id']
         nueva_reserva.motivo_cancelacion = req.POST.get('motivo_cancelacion', None)
         nueva_reserva.full_clean()
         nueva_reserva.save()

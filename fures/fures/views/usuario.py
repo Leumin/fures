@@ -37,20 +37,18 @@ def logueo(req):
     contrasena = req.POST.get('contrasena')
 
     if req.method == 'POST':
-        usuario = Usuario.objects.get(nombre_usuario=nombre_usuario, contrasena=contrasena)
-        exito = True
-    else:
-        exito = False
+        try:
+            usuario = Usuario.objects.get(nombre_usuario=nombre_usuario, contrasena=contrasena)
+        except Usuario.DoesNotExist:
+            return render(req, 'usuario/login.html')
 
-#
-    if exito == False:
-        return render(req, 'usuario/login.html')
-
-    elif exito == True:
         req.session['usuario_id'] = usuario.id
         if usuario.tipo_usuario_id == 1:
-            id = usuario.id
             return render(req, 'index.html/')
+        elif usuario.tipo_usuario_id == 2:
+            return render(req, 'index_admin.html/')
+
+
 
 
 def logout(request):

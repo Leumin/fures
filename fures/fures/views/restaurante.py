@@ -19,8 +19,6 @@ def ultimos_restaurantes(request):
     return res
 
 
-
-
 def ver_restaurantes(request):
     if 'nombre' in request.GET:
         restaurante = serializers.serialize("json",

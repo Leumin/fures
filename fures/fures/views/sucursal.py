@@ -39,6 +39,11 @@ def ver_horario(req, id):
     res = HttpResponse(horario, content_type="application/json")
     return  res
 
+def servicios(req, id):
+    servicios = serializers.serialize("json",Servicio.objects.filter(sucursal__id=id))
+    res = HttpResponse(servicios, content_type="application/json")
+    return  res
+
 
 def ver_platos_sucursal(req, id):
     platos = serializers.serialize("json", Plato.objects.filter(Sucursal__id=id))
@@ -53,6 +58,7 @@ def ver_sucursal(req, id):
         'direccion': sucursal.direccion,
         'telefono': sucursal.telefono,
         'capacidad': sucursal.capacidad,
+        'descripcion': sucursal.descripcion,
         'restaurante': str(sucursal.restaurante)
 
     })

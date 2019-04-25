@@ -32,7 +32,7 @@ def crear_comentario(req):
     try:
         nuevo_comentario = Comentario()
         nuevo_comentario.sucursal_id = req.POST.get('sucursal', None)
-        nuevo_comentario.usuario_id = req.POST.get('usuario', None)
+        nuevo_comentario.usuario_id = req.session['usuario_id']
         nuevo_comentario.comentario = req.POST.get('comentario', None)
         nuevo_comentario.puntuacion = req.POST.get('star', None)
         nuevo_comentario.full_clean()

@@ -113,6 +113,9 @@ class Restaurante(models.Model):
     def __str__(self):
         return self.nombre
 
+    def __int__(self):
+        return self.usuario_administrador
+
 class Rol(models.Model):#Se agregaron validaciones
     id = models.AutoField(primary_key=True)
     descripcion = models.TextField(max_length=45,error_messages={
@@ -245,6 +248,9 @@ class Usuario(models.Model):    # Se agregaron validaciones
 
     estado = models.BooleanField(default=True)
     tipo_usuario = models.ForeignKey('TipoUsuario',on_delete=models.PROTECT)
+    def __str__(self):
+        return self.nombre_persona
+
 
 class UsuarioAdministrador(models.Model):    # Se agregaron validaciones
     id = models.AutoField(primary_key=True)

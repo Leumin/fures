@@ -114,7 +114,8 @@
                     </div>
                     <div class="col">
                         <div class="media">
-                            <img src="{% static 'usuario/img/iconos/031-menu-1.png' %}" class="mr-3" alt="..." width="25px">
+                            <img src="{% static 'usuario/img/iconos/031-menu-1.png' %}" class="mr-3" alt="..."
+                                 width="25px">
                             <div class="media-body">
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn text-warning" data-toggle="modal"
@@ -179,7 +180,8 @@
                     </div>
                     <div class="col">
                         <div class="media">
-                            <img src="{% static 'usuario/img/iconos/014-placeholder.png' %}" class="mr-3" alt="..." width="25px">
+                            <img src="{% static 'usuario/img/iconos/014-placeholder.png' %}" class="mr-3" alt="..."
+                                 width="25px">
                             <div class="media-body">
                                 <h6 class="mt-0">Ubicacion</h6>
                                 <address>
@@ -194,77 +196,76 @@
             </div>
         </div>
 
-    </div>
 
-    <div class="container">
-        <hr style="background-color: #e2e3e5">
-        <div class="row">
-            <div class="col">
-                <h6>Acerca de nuestro Restaurante</h6>
-                <p>Esta es una breve descripción del restaurante y de los servicios que ofrecen, asi como
-                    información personalizada del restaurante. Esta es una breve descripción del restaurante y de
-                    los servicios que ofrecen, asi como información personalizada del restaurante.</p>
+        <div class="container">
+            <hr style="background-color: #e2e3e5">
+            <div class="row">
+                <div class="col">
+                    <h6>Acerca de nuestro Restaurante</h6>
+                    <p>Esta es una breve descripción del restaurante y de los servicios que ofrecen, asi como
+                        información personalizada del restaurante. Esta es una breve descripción del restaurante y de
+                        los servicios que ofrecen, asi como información personalizada del restaurante.</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <hr style="background-color: #e2e3e5">
+            <h6>Servicios</h6>
+
+            <br>
+            <div class="row">
+                <div class="col">
+                    <div class="media">
+                        <img src="{% static 'usuario/img/iconos/parked-car.png' %}" class="mr-3" alt="..."
+                             width="20px">
+                        <div class="media-body">
+                            <h6 class="mt-0">Media heading</h6>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col">
+                    <div class="media">
+                        <img src="{% static 'usuario/img/iconos/parked-car.png' %}" class="mr-3" alt="..."
+                             width="20px">
+                        <div class="media-body">
+                            <h6 class="mt-0">Media heading</h6>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col">
+                    <div class="media">
+                        <img src="{% static 'usuario/img/iconos/parked-car.png' %}" class="mr-3" alt="..."
+                             width="20px">
+                        <div class="media-body">
+                            <h6 class="mt-0">Media heading</h6>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col">
+                    <div class="media">
+                        <img src="{% static 'usuario/img/iconos/parked-car.png' %}" class="mr-3" alt="..."
+                             width="20px">
+                        <div class="media-body">
+                            <h6 class="mt-0">Media heading</h6>
+                        </div>
+                    </div>
+
+
+                </div>
+
 
             </div>
         </div>
     </div>
-
-    <div class="container">
-        <hr style="background-color: #e2e3e5">
-        <h6>Servicios</h6>
-
-        <br>
-        <div class="row">
-            <div class="col">
-                <div class="media">
-                    <img src="{% static 'usuario/img/iconos/parked-car.png' %}" class="mr-3" alt="..."
-                         width="20px">
-                    <div class="media-body">
-                        <h6 class="mt-0">Media heading</h6>
-                    </div>
-                </div>
-
-
-            </div>
-
-            <div class="col">
-                <div class="media">
-                    <img src="{% static 'usuario/img/iconos/parked-car.png' %}" class="mr-3" alt="..."
-                         width="20px">
-                    <div class="media-body">
-                        <h6 class="mt-0">Media heading</h6>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="col">
-                <div class="media">
-                    <img src="{% static 'usuario/img/iconos/parked-car.png' %}" class="mr-3" alt="..."
-                         width="20px">
-                    <div class="media-body">
-                        <h6 class="mt-0">Media heading</h6>
-                    </div>
-                </div>
-
-
-            </div>
-            <div class="col">
-                <div class="media">
-                    <img src="{% static 'usuario/img/iconos/parked-car.png' %}" class="mr-3" alt="..."
-                         width="20px">
-                    <div class="media-body">
-                        <h6 class="mt-0">Media heading</h6>
-                    </div>
-                </div>
-
-
-            </div>
-
-
-        </div>
-    </div>
-
     <div class="container">
         <hr style="background-color: #e2e3e5">
         <br>
@@ -287,8 +288,7 @@
                         </div>
                     </div>
                     <input type="hidden" id="estado_reserva" name="estado_reserva" value="1">
-                    <input type="hidden" id="usuario" name="usuario" value="1">
-                    <input type="hidden" id="sucursal" name="sucursal" value="1">
+                    <input type="hidden" id="sucursal" name="sucursal" value="">
                     <div class="col">
                         <button type="submit" class="btn btn-primary">Reservar</button>
                     </div>
@@ -304,7 +304,7 @@
 
             <form action="{% url "crearcomentario" %}" method="post" enctype="multipart/form-data"
                   class="star_container">
-                  {% csrf_token %}
+                {% csrf_token %}
                 <h5>Rating</h5>
 
                 <!--<h7>Click to rate:</h7>-->
@@ -329,7 +329,7 @@
                     <textarea type="text" name="comentario" class="form-control" id="exampleFormControlTextarea1"
                               rows="3"></textarea>
                     <input type="hidden" id="usuario" name="usuario" value="1">
-                    <input type="hidden" id="sucursal" name="sucursal" value="1">
+                    <input type="hidden" id="sucursal2" name="sucursal" value="">
                     <button type="submit" class="btn btn-primary" style="margin-top: 20px">Enviar</button>
                 </div>
             </form>
