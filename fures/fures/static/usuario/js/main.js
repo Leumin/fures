@@ -13,7 +13,7 @@ axios.get("/restaurante/ultimos")
                         <img class="img-fluid" src="http://localhost:8000/media/${res.data[i].fields.imagen}" alt="imagen" style="width:350px; height: 200px ">
                     </a>
                     <div class="portfolio-caption">
-         
+      
                         <h4>${res.data[i].fields.nombre}</h4>
                         <p class="text-muted">Illustration</p>
                     </div>

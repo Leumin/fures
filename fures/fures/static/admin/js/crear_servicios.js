@@ -1,8 +1,8 @@
 $(function () {
-    $("#Nombre").keyup(function () {
-        var This = $("#Nombre");
-        var user = $("#Nombre").val();
-        var expre = /^[a-zA-z1-9._,:"'-]+$/;
+    $("#Descripcion").keyup(function () {
+        var This = $("#Descripcion");
+        var user = $("#Descripcion").val();
+        var expre = /^[a-zA-z]+$/;
         var valido = expre.test(user);
         if (user == "" || user == null) {
             This.attr('style', 'border: 2px solid #F00');
@@ -17,34 +17,6 @@ $(function () {
         }
     });
 
-
-    $("#precio").keyup(function () {
-        var This = $("#precio");
-        var user = $("#precio").val();
-        var expre = /[^\d]/g;
-        var valido = expre.test(user);
-        if (user == "" || user == null) {
-            This.attr('style', 'border: 1px solid #F00');
-        } else {
-            This.attr('style', 'border: 1px solid #0F0');
-        }
-
-        if (valido) {
-            This.attr('style', 'border: 1px solid #0F0');
-        } else {
-            This.attr('style', 'border: 1px solid #F00');
-        }
-    });
-});
-
-        var regex = /[^.\d]/g;
-          var numTel = document.getElementById("precio");
-            numTel.addEventListener("keyup", function(){
-            if (numTel.value == ""){
-            numTel.value = "+";
-            }
-            numTel.value = numTel.value.replace(regex,"");
-            })
 
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
@@ -63,4 +35,5 @@ $(function () {
       }, false);
     });
   }, false);
-})();
+    })();
+});

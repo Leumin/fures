@@ -26,9 +26,9 @@
 
                         <div class="form-row">
                             <div class="col-md-12 mb-3">
-                                <label for="validationCustom01">Descripción</label>
-                                <input type="text" class="form-control" id="validationCustom01"
-                                       placeholder="Ingrese la Descripción" required>
+                                <label for="Descripcion">Descripción</label>
+                                <input type="text" class="form-control" name="descripcion" id="Descripcion"
+                                       placeholder="Ingrese la Descripción" maxlength="15" required>
 
                             </div>
                             <div class="form-group" style="padding-left: 5px;width: 910px">
@@ -44,7 +44,7 @@
  text-transform: uppercase;
  width: fit-content;
  text-align: center;">Elegir Imagen</label>
-                                <input type="file" class="fo "
+                                <input type="file" name="" class="fo "
                                        id="exampleFormControlFile" style="width: 0.1px;
  height: 0.1px;
  opacity: 0;
@@ -63,6 +63,10 @@
         </div>
     </div>
 
+{% endblock %}
+{% block js %}
+    <script src="{% static 'admin/js/jquery-3.4.0.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'admin/js/crear_servicios.js' %}" type="text/javascript"></script>
 {% endblock %}
 </body>
 </html>

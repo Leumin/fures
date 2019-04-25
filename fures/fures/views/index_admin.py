@@ -15,3 +15,10 @@ def Crear_Plato(request):
 
 def Visualizar_Plato(request):
     return render(request, 'administrador/visualizar_platos.html')
+
+def crear_sucursales_html(request):
+    return render(request, 'administrador/crear_sucursal.html')
+
+def Crear_Servicios(request):
+    return render(request, 'administrador/crear_servicios.html')
+

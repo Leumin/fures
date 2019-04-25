@@ -40,15 +40,15 @@
                                 <div class="form-row">
                                     <div class="col-md-12 mb-3">
                                         <label for="Nombre">Nombre del Plato</label>
-                                        <input type="text" class="form-control" id="Nombre"
-                                               placeholder="Ingrese el nombre del plato" required>
+                                        <input type="text" class="form-control" id="Nombre" name="nombre_plato"
+                                               placeholder="Ingrese el nombre del plato" maxlength="20" required>
                                         <div class="valid-feedback">
                                             DATOS VÁLIDOS!
                                         </div>
                                     </div>
                                     <div class="col-md-12 mb-3">
                                         <label for="precio">Precio</label>
-                                        <input type="tel" class="form-control" id="precio"
+                                        <input type="tel" class="form-control" id="precio" name="precio"
                                                placeholder="Ingrese el precio" required>
                                         <div class="valid-feedback">
                                             DATOS VÁLIDOS!
@@ -57,10 +57,12 @@
                                     <div style="padding-left: 6px; padding-right: 5px">
                                         <label>Seleccione Sucursal</label>
                                         <select class="custom-select" required>
-                                            <option selected>Selecioné la sucursal</option>
+                                            <option selected>Selecione la sucursal</option>
+
                                             <option value="1">Sucursal 1</option>
                                             <option value="2">Sucursal 2</option>
                                             <option value="3">Sucursal 3</option>
+
                                         </select>
                                         <br>
                                         <br>

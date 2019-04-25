@@ -26,27 +26,29 @@
 
                         <div class="form-row">
                             <div class="col-md-12 mb-3">
-                                <label for="validationCustom01">Dirección</label>
-                                <input type="text" class="form-control" id="validationCustom01"
+                                <label for="direccion">Dirección</label>
+                                <input type="text" class="form-control" name="direccion" id="direccion"
                                        placeholder="Ingrese la Dirección" required>
 
                             </div>
                             <div class="col-md-12 mb-3">
-                                <label for="validationCustom02">Teléfono</label>
-                                <input type="number" class="form-control" id="validationCustom02"
-                                       placeholder="Ingrese el Teléfono" required>
+                                <label for="telefono">Teléfono</label>
+                                <input type="tel" name="telefono" class="form-control" id="telefono"
+                                       placeholder="Ingrese el Teléfono" maxlength="8" required>
 
                             </div>
                             <div class="col-md-12 mb-3">
-                                <label for="validationCustom02">Capacidad</label>
-                                <input type="number" class="form-control" id="validationCustom02"
-                                       placeholder="Ingrese la capacidad" required>
+                                <label for="capacidad">Capacidad</label>
+                                <input type="number" class="form-control" id="capacidad"
+                                       placeholder="Ingrese la capacidad" name="capacidad" required>
                             </div>
 
                             <div class="col-md-12 mb-3">
-                                <label for="validationCustom02">Acerca de la sucursal</label>
-                                <input type="text" class="form-control" id="validationCustom02"
+                                <label for="AcercaDe">Acerca de la sucursal</label>
+                                <input type="text" class="form-control" id="AcercaDe"
                                        placeholder="Acerca de..." required>
+                                <input type="hidden"  name="estado" value="1">
+                                <input type="hidden"  name="restaurante" >
                             </div>
                         </div>
                     <button class="btn btn-primary" type="submit">Agregar</button>
@@ -59,6 +61,9 @@
     </div>
 
 {% endblock %}
-
+{% block js %}
+    <script src="{% static 'admin/js/jquery-3.4.0.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'admin/js/crear_sucursal.js' %}" type="text/javascript"></script>
+{% endblock %}
 </body>
 </html>
