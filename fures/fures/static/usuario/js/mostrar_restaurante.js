@@ -212,11 +212,11 @@ Promise.all([axios.get("/sucursal/ver/sucursal/" + id), axios.get("/sucursal/ima
             <h6>Servicios</h6>
 
             <br>
-            <div class="row">
+            <div class="row" style="width:500px">
             `;
         for (var i = 0; i < serv.data.length; i++) {
             html += `
-                <div class="col">
+                <div class="col-3">
                     <div class="media">
                         <img src="{% static 'usuario/img/iconos/parked-car.png' %}" class="mr-3" alt="..."
                              width="20px">
@@ -225,13 +225,13 @@ Promise.all([axios.get("/sucursal/ver/sucursal/" + id), axios.get("/sucursal/ima
                         </div>
                     </div>
                 </div>
-
-
-            </div>
-        </div>
-
+      
         `;
         }
+        html += `
+                </div>
+            </div>
+                `;
         var elemento = document.getElementById('restauranteinfo');
         elemento.innerHTML = html;
 
