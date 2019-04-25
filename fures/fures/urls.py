@@ -38,13 +38,13 @@ from .views.servicio import ver_servicios, ver_servicio, crear_servicio, actuali
 from .views.sucursal import ver_sucursales, ver_sucursales_por_restaurante, crear_sucursal, actualizar_sucursal, \
     sucursalhtml, ver_sucursal, ver_imagenes, ver_horario, ver_platos_sucursal
 from .views.tipoUsuario import ver_tiposUsuario, ver_tipoUsuario, crear_tipoUsuario, actualizar_tipoUsuario
-from .views.usuario import ver_usuarios, ver_usuario, crear_usuario, actualizar_usuario
+from .views.usuario import ver_usuarios, ver_usuario, crear_usuario, actualizar_usuario, logueo, logout
 from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', inicio, name='inicio'),
-    path('index', login, name='login'),
+    path('index', inicio, name='inicio'),
+    path('', login, name='login'),
     path('index/', formularioRegistro, name='formularioRegistro'),
     path('index_admin/', sucursal, name='sucursal'),
     path('index_admin/Visualizar/', Visualizar_sucursal, name='Visualizar_sucursal'),
@@ -96,8 +96,11 @@ urlpatterns = [
     #USUARIO
     path('usuario/', ver_usuarios),
     path('usuario/ver/<int:id>/', ver_usuario),
+    path('usuario/login/', logueo, name ='logueo'),
+    path('usuario/logout/', logout, name = 'logout'),
     path('usuario/crear', crear_usuario, name='crearusuario'),
     path('usuario/actualizar/<int:id>', actualizar_usuario),
+
     #RESERVA
     path('reserva/', ver_reservas),
     path('reserva/ver/<int:id>/', ver_reserva),

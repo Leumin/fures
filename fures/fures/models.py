@@ -109,6 +109,7 @@ class Restaurante(models.Model):
     })#verificar esta parte con la BD
     imagen = models.ImageField(upload_to='restaurantes', blank=False, null=False)
     estado = models.BooleanField()#verificar esta parte con la BD
+    usuario_administrador = models.ForeignKey('UsuarioAdministrador', on_delete=models.PROTECT)
     def __str__(self):
         return self.nombre
 
@@ -243,6 +244,65 @@ class Usuario(models.Model):    # Se agregaron validaciones
             raise ValidationError("El numero de telefono debe contener solo datos numericos")
 
     estado = models.BooleanField(default=True)
+    tipo_usuario = models.ForeignKey('TipoUsuario',on_delete=models.PROTECT)
+
+class UsuarioAdministrador(models.Model):    # Se agregaron validaciones
+    id = models.AutoField(primary_key=True)
+    nombre_persona = models.CharField(max_length=45, error_messages={
+                                          'max_length': 'El Nombre no puede ser mayor a 45  caracteres ',
+                                          'null': 'Este campo no puede quedar null, por favor proporcione un Nombre de Usuario',
+                                          'blank': 'Este campo no puede quedar vacío, por favor proporcione un Nombre de Usuario'
+                                      })
+    def clean(self):
+        if not self.nombre_persona.isalpha():
+            raise ValidationError("El nombre de la persona solamente puede contener datos alfabeticos")
+
+    apellido_persona = models.CharField(max_length=45,error_messages={
+                                          'max_length': 'EL Apellido no puede ser mayor a 45  caracteres ',
+                                          'null': 'Este campo no puede quedar null, por favor proporcione un Apellido ',
+                                          'blank': 'Este campo no puede quedar vacío, por favor proporcione un Apellido '
+                                      })
+
+    def clean(self):
+        if not self.apellido_persona.isalpha():
+            raise ValidationError("El apellido de la persona solamente puede contener datos alfabeticos")
+
+    direccion = models.TextField(max_length=700,error_messages={
+                                          'max_length': 'La direccion de Usuario no puede ser mayor a 700  caracteres ',
+                                          'null': 'Este campo no puede quedar null, por favor proporcione una direccion de Usuario',
+                                          'blank': 'Este campo no puede quedar vacío, por favor proporcione una direccion de Usuario'
+                                      })
+    nombre_usuario = models.CharField(unique=True, max_length=45,error_messages={
+                                          'max_length': 'El nombre de Usuario no puede ser mayor a 45  caracteres ',
+                                          'null': 'Este campo no puede quedar null, por favor proporcione Nombre de Usuario',
+                                          'blank': 'Este campo no puede quedar vacío, por favor proporcione un Nombre de Usuario'
+                                      })
+    contrasena = models.CharField(max_length=45,error_messages={
+                                          'max_length': 'La contraseña de Usuario no puede ser mayor a 45  caracteres ',
+                                          'null': 'Este campo no puede quedar null, por favor proporcione una contraseña de Usuario',
+                                          'blank': 'Este campo no puede quedar vacío, por favor proporcione una contraseña de Usuario'
+                                      })
+    correo = models.EmailField(error_messages={
+        'invalid':'Correo no valido'
+    })
+    telefono = models.CharField(max_length=8,error_messages={
+        'max_length':'El telefono no puede contener mas de 8 caracteres',
+        'null': 'Este campo no puede quedar null, por favor proporcione un telefono',
+        'blank': 'Este campo no puede quedar vacío, por favor proporcione un telefono'
+    })
+
+    def clean(self):
+        if not self.telefono.isnumeric():
+            raise ValidationError("El numero de telefono debe contener solo datos numericos")
+
+    estado = models.BooleanField(default=True)
+    tipo_usuario = models.ForeignKey('TipoUsuario',on_delete=models.PROTECT)
+
+
+
+class TipoUsuario(models.Model):
+    id = models.AutoField(primary_key=True)
+    descripcion = models.CharField(max_length=20)
 
 
 class CategoriaPlato(models.Model):# Se agregaron validaciones
