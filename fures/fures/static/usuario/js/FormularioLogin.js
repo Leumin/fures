@@ -1,7 +1,7 @@
 $(function () {
-    $("#Nombre").keyup(function () {
-        var This = $("#Nombre");
-        var user = $("#Nombre").val();
+    $("#nombre_persona").keyup(function () {
+        var This = $("#nombre_persona");
+        var user = $("#nombre_persona").val();
         var expre = /^[a-zA-z]+$/;
         var valido = expre.test(user);
         if (user == "" || user == null) {
@@ -17,9 +17,9 @@ $(function () {
         }
     });
 
-    $("#inputApellido").keyup(function () {
-        var This = $("#inputApellido");
-        var user = $("#inputApellido").val();
+    $("#apellido_persona").keyup(function () {
+        var This = $("#apellido_persona");
+        var user = $("#apellido_persona").val();
         var expre = /^[a-zA-z]+$/;
         var valido = expre.test(user);
         if (user == "" || user == null) {
