@@ -29,8 +29,9 @@ def crear_servicio(req):
     errores = []
     exito = True
     try:
-        nuevo_servicio = Rol()
+        nuevo_servicio = Servicio
         nuevo_servicio.descripcion = req.POST.get('descripcion', None)
+        nuevo_servicio.imagen = req.FILES['imagen']
         nuevo_servicio.sucursal = req.POST.get('sucursal', None)
         nuevo_servicio.full_clean()
         nuevo_servicio.save()

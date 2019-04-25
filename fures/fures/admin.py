@@ -1,12 +1,12 @@
 
-from .models import Restaurante, Horario
+from .models import Restaurante, Horario, Servicio
 from .models import Sucursal
 from .models import ImangenSucursal
 
 from django.contrib import admin
 
 class restaurante(admin.ModelAdmin):
-    fields = ['nombre', 'descripcion', 'imagen', 'estado', 'usuario_administrador']
+    fields = ['nombre', 'descripcion', 'imagen', 'estado', 'usuario']
     list_display = ('nombre', 'estado')
 
 
@@ -20,12 +20,15 @@ class inlinehorario(admin.StackedInline):
     extra = 7
     max_num = 7
 
+class inlineservicios(admin.StackedInline):
+    model = Servicio
+    extra = 4
 
 class sucursal(admin.ModelAdmin):
-    fields = ['direccion', 'telefono', 'capacidad', 'estado', 'restaurante']
+    fields = ['direccion', 'telefono', 'descripcion','capacidad', 'estado', 'restaurante']
     list_display = ('direccion', 'telefono', 'capacidad', 'estado')
     list_filter = ['restaurante']
-    inlines = [inlineimagen, inlinehorario]
+    inlines = [inlineimagen, inlinehorario,inlineservicios]
 
 
 admin.site.register(Restaurante, restaurante)

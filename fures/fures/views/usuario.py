@@ -1,6 +1,7 @@
 from django.http import HttpResponse, JsonResponse
 from django.core import serializers
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.template.response import TemplateResponse
 
 from ..models import *
 from django.core.exceptions import ValidationError
@@ -46,7 +47,7 @@ def logueo(req):
         if usuario.tipo_usuario_id == 1:
             return render(req, 'index.html/')
         elif usuario.tipo_usuario_id == 2:
-            return render(req, 'index_admin.html/')
+            return render(req, 'administrador/admin_index.html')
 
 
 
