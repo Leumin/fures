@@ -61,14 +61,27 @@ Promise.all([axios.get("/sucursal/ver/sucursal/" + id), axios.get("/sucursal/ima
                 <div class="row">
                     <div class="col">
                         <div class="media">
-                            <img src="http://localhost:8000/media/iconos/time.png" width="20px">
+                            <div class="row" style="width:500px">
+                                <div class="col-6">
+                                     <img src="http://localhost:8000/media/iconos/time.png" width="20px">
+                                     <button type="button" class="btn text-warning" data-toggle="modal"
+                                        data-target="#exampleModal1">Ver Horarios</button>
+                                </div>
+                                <div class="col-6">
+                                     <img src="http://localhost:8000/media/iconos/031-menu-1.png" class="mr-3" alt="..." width="25px">
+                                    <button type="button" class="btn text-warning" data-toggle="modal"
+                                            data-target="#exampleModal">
+                                        Menu
+                                    </button>
+                                </div>
+                                <div class="col-8">
+                                    
+                                </div>
+                            </div>
+                            
                             <div class="media-body">
-
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn text-warning" data-toggle="modal"
-                                        data-target="#exampleModal1">
-                                    Ver Horarios
-                                </button>
+
 
                                 <!-- Modal -->
                                 <div id="horario">
@@ -116,14 +129,6 @@ Promise.all([axios.get("/sucursal/ver/sucursal/" + id), axios.get("/sucursal/ima
                     </div>
                     <div class="col">
                         <div class="media">
-                            <img src="http://localhost:8000/media/iconos/031-menu-1.png" class="mr-3" alt="..." width="25px">
-                            <div class="media-body">
-                                 
-                                <button type="button" class="btn text-warning" data-toggle="modal"
-                                        data-target="#exampleModal">
-                                    Menu
-                                </button>
-
                                 <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                                      aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -175,13 +180,14 @@ Promise.all([axios.get("/sucursal/ver/sucursal/" + id), axios.get("/sucursal/ima
                             </div>
                         </div>
                     </div>
+                    
                     <div class="col">
                         <div class="media">
                             <img src="http://localhost:8000/media/iconos/014-placeholder.png" class="mr-3" alt="..." width="25px">
                             <div class="media-body">
                                 <h6 class="mt-0">Ubicacion</h6>
                                 <address>
-                                    Col. Sitramacsa, calle del IHSS , una cuadra adentro
+                                    ${Object.values(suc.data)[1]}
                                 </address>
                                 <a href="#">Cómo llegar</a>
                             </div>

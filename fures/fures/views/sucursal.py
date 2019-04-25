@@ -28,17 +28,7 @@ def ver_sucursales_por_restaurante(req, id):
     return  res
 
 def ver_sucursales_admin(req):
-    # restaurante = Restaurante.objects.filter(usuario__id=req.session['usuario_id']).first()
-    sucursal = Sucursal.objects.filter(restaurante__id=1)
-    return JsonResponse({
-        'id': sucursal.id,
-        'direccion': sucursal.direccion,
-        'telefono': sucursal.telefono,
-        'capacidad': sucursal.capacidad,
-        'descripcion': sucursal.descripcion,
-        'restaurante': str(sucursal.restaurante)
-
-    })
+    pass
 
 
 
