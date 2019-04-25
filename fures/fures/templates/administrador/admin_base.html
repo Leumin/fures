@@ -70,7 +70,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Gestionar Sucursal:</h6>
-            <a class="collapse-item" href="{% url "sucursal" %}">Crear Sucursal</a>
+            <a class="collapse-item" href="{% url "crear_sucursal_html" %}">Crear Sucursal</a>
             <a class="collapse-item" href="{% url "sucursal" %}">Modificar Sucursal</a>
             <a class="collapse-item" href="{% url "Visualizar_sucursal" %}">Visualizar Sucursales</a>
           </div>
@@ -102,19 +102,6 @@
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <img class="fas fa-fw " src="http://localhost:8000/media/iconos/031-menu-1.png " width="24px">
-          <span>Menu</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Gestionar Menu:</h6>
-            <a class="collapse-item" href="#">Crear Menu</a>
-            <a class="collapse-item" href="#">Visualizar Menu</a>
-          </div>
-        </div>
-      </li>
-      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages1" aria-expanded="true" aria-controls="collapsePages">
           <img class="fas fa-fw " src="http://localhost:8000/media/iconos/031-menu-1.png " width="24px">
           <span>Servicios</span>
@@ -122,7 +109,7 @@
         <div id="collapsePages1" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Gestionar Servicios:</h6>
-            <a class="collapse-item" href="#">Crear Servicios</a>
+            <a class="collapse-item" href="{% url "Crear_Servicios" %}">Crear Servicios</a>
             <a class="collapse-item" href="#">Visualizar Servicios</a>
           </div>
         </div>
