@@ -1,5 +1,5 @@
 
-from .models import Restaurante, Horario, Servicio
+from .models import Restaurante, Horario, Servicio, Plato
 from .models import Sucursal
 from .models import ImangenSucursal
 
@@ -8,6 +8,10 @@ from django.contrib import admin
 class restaurante(admin.ModelAdmin):
     fields = ['nombre', 'descripcion', 'imagen', 'estado', 'usuario']
     list_display = ('nombre', 'estado')
+
+class inlineplato(admin.StackedInline):
+    model = Plato
+    extra = 15
 
 
 class inlineimagen(admin.StackedInline):
@@ -28,7 +32,7 @@ class sucursal(admin.ModelAdmin):
     fields = ['direccion', 'telefono', 'descripcion','capacidad', 'estado', 'restaurante']
     list_display = ('direccion', 'telefono', 'capacidad', 'estado')
     list_filter = ['restaurante']
-    inlines = [inlineimagen, inlinehorario,inlineservicios]
+    inlines = [inlineimagen, inlinehorario,inlineservicios, inlineplato]
 
 
 admin.site.register(Restaurante, restaurante)
