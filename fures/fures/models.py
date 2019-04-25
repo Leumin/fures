@@ -55,10 +55,6 @@ class Plato(models.Model):
         'blank':'Este campo no puede quedar vacio, por favor ingrese una cantidad para el precio'
     })
     imagen = models.ImageField(upload_to='platos', blank=False, null=False)
-    def clean(self):
-        if not self.precio.isnumeric():
-            raise ValidationError("El precio debe contener solo datos numericos")
-
     estado = models.BooleanField(default=True)#verificar que tipo de validaciones se puede hacer aqui
     Sucursal = models.ForeignKey('Sucursal', on_delete=models.PROTECT)#verificar que tipo de validaciones se puede hacer aqui
 
@@ -144,9 +140,6 @@ class Sucursal(models.Model): #Se agregaron validaciones
         'blank':' Este campo no puede quedar vacío, por favor proporcione un numero de telefono'
     })
 
-    def clean(self):
-        if not self.telefono.isnumeric():
-            raise ValidationError("El numero de telefono debe contener solo datos numericos")
 
     descripcion = models.TextField(max_length=999, error_messages={
         'max_length': 'Este campo no puede contener mas de 45 caracteres',

@@ -1,5 +1,5 @@
 
-from .models import Restaurante, Horario, Servicio, Plato
+from .models import Restaurante, Horario, Servicio, Plato, Usuario
 from .models import Sucursal
 from .models import ImangenSucursal
 
@@ -37,3 +37,4 @@ class sucursal(admin.ModelAdmin):
 
 admin.site.register(Restaurante, restaurante)
 admin.site.register(Sucursal, sucursal)
+admin.site.register(Usuario)

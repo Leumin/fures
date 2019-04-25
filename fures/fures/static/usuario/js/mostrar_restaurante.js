@@ -7,7 +7,7 @@ document.getElementById("sucursal2").value = id;
 
 
 Promise.all([axios.get("/sucursal/ver/sucursal/" + id), axios.get("/sucursal/imagen/" + id), axios.get("/sucursal/horario/" + id), axios.get("/sucursal/platos/" + id), axios.get("/sucursal/servicio/" + id)])
-    .then(([suc, img, hor, menu, serv]) => {
+    .then(([suc, img, hor, menu, service]) => {
         let html = "";
         html += `
  
@@ -208,14 +208,14 @@ Promise.all([axios.get("/sucursal/ver/sucursal/" + id), axios.get("/sucursal/ima
             <br>
             <div class="row">
             `;
-        for (var i = 0; i < serv.data.length; i++) {
+        for (var i = 0; i < service.data.length; i++) {
             html += `
                 <div class="col">
                     <div class="media">
-                        <img src="{% static 'usuario/img/iconos/parked-car.png' %}" class="mr-3" alt="..."
+                        <img src="http://localhost:8000/media/${service.data[i].fields.imagen}" class="mr-3" alt="..."
                              width="20px">
                         <div class="media-body">
-                            <h6 class="mt-0">Media heading</h6>
+                            <h6 class="mt-0">${service.data[i].fields.descripcion}</h6>
                         </div>
                     </div>
                 </div>
