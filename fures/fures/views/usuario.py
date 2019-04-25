@@ -50,8 +50,6 @@ def logueo(req):
             return render(req, 'administrador/admin_index.html')
 
 
-
-
 def logout(request):
     try:
         del request.session['usuario_id']
