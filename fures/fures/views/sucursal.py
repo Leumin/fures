@@ -27,6 +27,20 @@ def ver_sucursales_por_restaurante(req, id):
     res = HttpResponse(sucursal, content_type="application/json")
     return  res
 
+def ver_sucursales_admin(req):
+    # restaurante = Restaurante.objects.filter(usuario__id=req.session['usuario_id']).first()
+    sucursal = Sucursal.objects.filter(restaurante__id=1)
+    return JsonResponse({
+        'id': sucursal.id,
+        'direccion': sucursal.direccion,
+        'telefono': sucursal.telefono,
+        'capacidad': sucursal.capacidad,
+        'descripcion': sucursal.descripcion,
+        'restaurante': str(sucursal.restaurante)
+
+    })
+
+
 
 def ver_imagenes(req, id):
     imagen = serializers.serialize("json",ImangenSucursal.objects.filter(sucursal__id=id))
@@ -67,16 +81,16 @@ def ver_sucursal(req, id):
 def crear_sucursal(req):
     errores = []
     exito = True
+    restaurante = Restaurante.objects.filter(usuario__id=req.session['usuario_id']).first()
     try:
         nueva_sucursal = Sucursal()
         nueva_sucursal.direccion = req.POST.get('direccion', None)
         nueva_sucursal.telefono = req.POST.get('telefono', None)
-        nueva_sucursal.hora_inicio = req.POST.get('hora_inicio', None)
-        nueva_sucursal.hora_cierre = req.POST.get('hora_cierre', None)
+        nueva_sucursal.descripcion = req.POST.get('descripcion', None)
         nueva_sucursal.capacidad = req.POST.get('capacidad', None)
         nueva_sucursal.estado = req.POST.get('estado', None)
-        nueva_sucursal.restaurante = req.POST.get('restaurante', None)
-        nueva_sucursal.full_clean()
+        nueva_sucursal.restaurante_id = restaurante.id
+        # nueva_sucursal.full_clean()
         nueva_sucursal.save()
     except ValidationError as e:
         errores = e.messages

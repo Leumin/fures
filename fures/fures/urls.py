@@ -36,7 +36,7 @@ from .views.restaurante import restauranteshtml, ver_restaurantes, ver_restauran
 from .views.rol import ver_roles, ver_rol, crear_rol, actualizar_rol
 from .views.servicio import ver_servicios, ver_servicio, crear_servicio, actualizar_servicio
 from .views.sucursal import ver_sucursales, ver_sucursales_por_restaurante, crear_sucursal, actualizar_sucursal, \
-    sucursalhtml, ver_sucursal, ver_imagenes, ver_horario, ver_platos_sucursal, servicios
+    sucursalhtml, ver_sucursal, ver_imagenes, ver_horario, ver_platos_sucursal, servicios, ver_sucursales_admin
 from .views.tipoUsuario import ver_tiposUsuario, ver_tipoUsuario, crear_tipoUsuario, actualizar_tipoUsuario
 from .views.usuario import ver_usuarios, ver_usuario, crear_usuario, actualizar_usuario, logueo, logout
 from . import views
@@ -52,6 +52,7 @@ urlpatterns = [
     path('index_admin/Visualizar/', Visualizar_Plato, name='Visualizar_Plato'),
     path('index_admin/crear/sucursal', crear_sucursales_html, name='crear_sucursal_html'),
     path('index_admin/Crear/servicio/', Crear_Servicios, name='Crear_Servicios'),
+
                   #CATEGORIAS
     path('categorias/', ver_categorias),
     path('categorias/ver/<int:id>/', ver_categoria, views.categoria),
@@ -114,8 +115,9 @@ urlpatterns = [
     path('sucursal/servicio/<int:id>', servicios),
     path('sucursal/platos/<int:id>', ver_platos_sucursal, name='verplatos'),
     path('sucursal/ver/<int:id>/', ver_sucursales_por_restaurante),
+    path('sucursal/ver/admin/', ver_sucursales_admin),
     path('sucursal/ver/sucursal/<int:id>/', ver_sucursal),
-    path('sucursal/crear', crear_sucursal),
+    path('sucursal/crear', crear_sucursal, name="crearsucursal"),
     path('sucursal/actualizar/<int:id>', actualizar_sucursal),
     #PROMOCION
     path('promocion/', ver_promociones),
