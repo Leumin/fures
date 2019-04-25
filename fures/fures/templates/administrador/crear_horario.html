@@ -1,0 +1,269 @@
+{% extends 'administrador/admin_base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titulo %}Sucursales{% endblock %}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+</head>
+<body>
+
+{% block contenido %}
+
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Sucursal</h1>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <!-- Page Heading -->
+
+
+            <div class="row">
+
+                <div class="col-lg-6">
+
+                    <!-- Default Card Example -->
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            Crear Horario
+                        </div>
+
+                        <form action="" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+
+
+                            <div class="card-body">
+
+
+                                <div class="container">
+
+                                    <div class="col-sm-6">
+                                        <div id="type_conta">
+                                            <div class="row form-group" id="edit-0">
+
+                                                <div class="col-md-5 clearfix">
+                                                    <div class="row col-md-7">
+
+                                                        <form>
+
+                                                            <div class="form-group">
+                                                                <a class="add pull-right" href="javascript: void(0)"
+                                                                   title="Click to add more"><img
+                                                                        src="{% static 'usuario/img/icons/add.png' %}"
+                                                                        width="30px"><i
+                                                                        class="glyphicon glyphicon-plus-sign"></i></a>
+                                                                <label for="formGroupExampleInput1"
+                                                                       style="width: 320px;">Día</label>
+                                                                <input type="text" class="form-control"
+                                                                       id="formGroupExampleInput1"
+                                                                       placeholder="Ingrese el Día">
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <div class="col">
+                                                                    <div class="input-group mb-3">
+                                                                        <div class="input-group-prepend">
+                                                                            <label class="input-group-text"
+                                                                                   style="width: 300px;border-radius: 0">Entrada</label>
+                                                                        </div>
+                                                                        <select class="custom-select"
+                                                                                style="border-radius: 0">
+                                                                            <option selected>Choose...</option>
+                                                                            <option value="1">7:00</option>
+                                                                            <option value="2">8:00</option>
+                                                                            <option value="3">9:00</option>
+                                                                            <option value="4">10:00</option>
+                                                                            <option value="5">11:00</option>
+                                                                            <option value="6">12:00</option>
+                                                                            <option value="7">13:00</option>
+                                                                            <option value="8">14:00</option>
+                                                                            <option value="9">15:00</option>
+                                                                            <option value="10">16:00</option>
+                                                                            <option value="11">17:00</option>
+                                                                            <option value="12">18:00</option>
+                                                                            <option value="13">19:00</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col">
+                                                                    <div class="input-group mb-3">
+                                                                        <div class="input-group-prepend">
+                                                                            <label class="input-group-text"
+                                                                                   style="width: 300px;border-radius: 0">Salida </label>
+                                                                        </div>
+                                                                        <select class="custom-select"
+                                                                                style="border-radius: 0">
+                                                                            <option selected>Choose...</option>
+                                                                            <option value="1">7:00</option>
+                                                                            <option value="2">8:00</option>
+                                                                            <option value="3">9:00</option>
+                                                                            <option value="4">10:00</option>
+                                                                            <option value="5">11:00</option>
+                                                                            <option value="6">12:00</option>
+                                                                            <option value="7">13:00</option>
+                                                                            <option value="8">14:00</option>
+                                                                            <option value="9">15:00</option>
+                                                                            <option value="10">16:00</option>
+                                                                            <option value="11">17:00</option>
+                                                                            <option value="12">18:00</option>
+                                                                            <option value="13">19:00</option>
+                                                                            <option value="14">20:00</option>
+                                                                            <option value="15">21:00</option>
+                                                                            <option value="16">22:00</option>
+                                                                            <option value="17">23:00</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="type-conta" class="hide">
+                                            <div class="row form-group type-row">
+
+
+                                                <div class="col-md-5 clearfix">
+                                                    <div class="row col-md-5">
+                                                        <form>
+
+                                                            <div class="form-group">
+
+
+                                                                {#                                                            <label for="formGroupExampleInput"#}
+                                                                {#                                                                   style="width: 300px;border-radius: 0">Día</label>#}
+                                                                <a class="remove" targetDiv=""
+                                                                   data-id="0"
+                                                                   href="javascript: void(0)"><img
+                                                                        src="{% static 'usuario/img/icons/subtract-sign.png' %}"
+                                                                        width="30px" class="glyphicon glyphicon-trash"></a>
+                                                                <input type="text" class="form-control"
+                                                                       id="formGroupExampleInput"
+                                                                       placeholder="Ingrese el Día">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col">
+                                                                    <div class="input-group mb-3">
+                                                                        <div class="input-group-prepend">
+                                                                            <label class="input-group-text"
+                                                                                   style="width: 300px;border-radius: 0">Entrada</label>
+                                                                        </div>
+                                                                        <select class="custom-select"
+                                                                                style="border-radius: 0;">
+                                                                            <option selected>Choose...</option>
+                                                                            <option value="1">7:00</option>
+                                                                            <option value="2">8:00</option>
+                                                                            <option value="3">9:00</option>
+                                                                            <option value="4">10:00</option>
+                                                                            <option value="5">11:00</option>
+                                                                            <option value="6">12:00</option>
+                                                                            <option value="7">13:00</option>
+                                                                            <option value="8">14:00</option>
+                                                                            <option value="9">15:00</option>
+                                                                            <option value="10">16:00</option>
+                                                                            <option value="11">17:00</option>
+                                                                            <option value="12">18:00</option>
+                                                                            <option value="13">19:00</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col">
+                                                                    <div class="input-group mb-3">
+                                                                        <div class="input-group-prepend">
+                                                                            <label class="input-group-text"
+                                                                                   style="width: 300px;border-radius: 0">Salida </label>
+                                                                        </div>
+                                                                        <select class="custom-select"
+                                                                                style="border-radius: 0">
+                                                                            <option selected>Choose...</option>
+                                                                            <option value="1">7:00</option>
+                                                                            <option value="2">8:00</option>
+                                                                            <option value="3">9:00</option>
+                                                                            <option value="4">10:00</option>
+                                                                            <option value="5">11:00</option>
+                                                                            <option value="6">12:00</option>
+                                                                            <option value="7">13:00</option>
+                                                                            <option value="8">14:00</option>
+                                                                            <option value="9">15:00</option>
+                                                                            <option value="10">16:00</option>
+                                                                            <option value="11">17:00</option>
+                                                                            <option value="12">18:00</option>
+                                                                            <option value="13">19:00</option>
+                                                                            <option value="14">20:00</option>
+                                                                            <option value="15">21:00</option>
+                                                                            <option value="16">22:00</option>
+                                                                            <option value="17">23:00</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </form>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+
+                                <button class="btn btn-primary" type="submit">Agregar</button>
+
+
+                                <script src="{% static 'admin/js/validar_sucursal.js' %}"></script>
+
+                            </div>
+
+
+                            {% csrf_token %}
+
+
+                        </form>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+
+
+{% endblock %}
+
+
+{% block js %}
+    <script src="{% static 'admin/js/jquery-3.4.0.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'admin/js/validar_sucursal.js' %}" type="text/javascript"></script>
+    <script src="{% static 'admin/js/gestion_horario.js' %}"></script>
+    <script src="{% static 'admin/js/gestion_imagen.js' %}"></script>
+    <script type="text/javascript" charset="utf8"
+            src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
+{% endblock %}
+
+</body>
+</html>
